@@ -1,0 +1,9 @@
+{
+  "name": "luna-ravintola",
+  "version": "1.0.0",
+  "description": "Luna Ravintola - The Best Pizza in Turku",
+  "scripts": {
+    "start": "npx serve .",
+    "build": "echo 'Static site - no build needed'"
+  }
+}

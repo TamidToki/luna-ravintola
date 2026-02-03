@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Luna Ravintola - The Best Pizza in Turku. Huge portions, fresh ingredients, unforgettable taste.">
+    <title>Luna Ravintola | Turku</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Global Background Particles -->
+    <div class="global-particles">
+        <i class="fas fa-pizza-slice gp"></i>
+        <i class="fas fa-star gp"></i>
+        <i class="fas fa-pizza-slice gp"></i>
+        <i class="fas fa-fire gp"></i>
+        <i class="fas fa-star gp"></i>
+        <i class="fas fa-pizza-slice gp"></i>
+        <i class="fas fa-pepper-hot gp"></i>
+        <i class="fas fa-star gp"></i>
+        <i class="fas fa-pizza-slice gp"></i>
+        <i class="fas fa-fire gp"></i>
+        <i class="fas fa-pizza-slice gp"></i>
+        <i class="fas fa-star gp"></i>
+        <i class="fas fa-fire gp"></i>
+        <i class="fas fa-pepper-hot gp"></i>
+        <i class="fas fa-pizza-slice gp"></i>
+        <i class="fas fa-star gp"></i>
+        <i class="fas fa-fire gp"></i>
+        <i class="fas fa-pepper-hot gp"></i>
+        <i class="fas fa-pizza-slice gp"></i>
+        <i class="fas fa-star gp"></i>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <div class="logo-icon"><i class="fas fa-pizza-slice"></i></div>
+                <div>
+                    <div class="logo-text">LUNA</div>
+                    <span class="logo-sub">RAVINTOLA</span>
+                </div>
+            </a>
+
+            <div class="nav-links desktop-nav">
+                <a href="#home" data-en="HOME" data-fi="KOTI">HOME</a>
+                <a href="#menu" data-en="MENU" data-fi="RUOKALISTA">MENU</a>
+                <a href="#reviews" data-en="REVIEWS" data-fi="ARVOSTELUT">REVIEWS</a>
+                <a href="#location" data-en="CONTACT" data-fi="YHTEYSTIEDOT">CONTACT</a>
+            </div>
+
+            <div class="nav-controls">
+                <button id="theme-toggle" class="icon-btn" aria-label="Toggle Dark Mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button id="lang-toggle" class="lang-btn">
+                    <i class="fas fa-globe"></i> <span id="lang-text">EN</span>
+                </button>
+                <button class="hamburger icon-btn" aria-label="Menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu-overlay">
+        <button class="close-menu"><i class="fas fa-times"></i></button>
+        <div class="mobile-menu-links">
+            <a href="#home">Home</a>
+            <a href="#menu">Menu</a>
+            <a href="#reviews">Reviews</a>
+            <a href="#location">Contact</a>
+        </div>
+    </div>
+
+    <!-- Hero Section with Particles -->
+    <section id="home" class="hero animate-on-scroll">
+        <div class="hero-slideshow">
+            <img src="assets/pizza_prosciutto.png" alt="Prosciutto Pizza" class="slide active">
+            <img src="assets/interior.jpg" alt="Luna Ravintola Interior" class="slide">
+            <img src="assets/pizza_mexicana.jpg" alt="Mexicana Pizza" class="slide">
+            <img src="assets/pizza_bbq.jpg" alt="BBQ Pizza" class="slide">
+            <img src="assets/pizza_ham_arugula.jpg" alt="Ham Arugula Pizza" class="slide">
+        </div>
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+            <div class="rating-badge">
+                <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                        class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <span>5.0 (6 Google Reviews)</span>
+            </div>
+
+            <h1><span data-en="The Best Pizza" data-fi="Paras Pizza">The Best Pizza</span> <br> <span class="orange"
+                    data-en="in Turku" data-fi="Turussa">in Turku</span></h1>
+            <p data-en="Huge portions. Fresh ingredients. Unforgettable taste."
+                data-fi="Valtavat annokset. Tuoreet raaka-aineet. Unohtumaton maku.">Huge portions. Fresh ingredients.
+                Unforgettable taste.</p>
+
+            <div class="hero-buttons">
+                <a href="#menu" class="btn btn-primary">
+                    <i class="fas fa-utensils"></i> <span data-en="View Menu" data-fi="Katso Ruokalista">View
+                        Menu</span>
+                </a>
+                <a href="tel:0413154126" class="btn btn-white">
+                    <i class="fas fa-phone"></i> 041 3154126
+                </a>
+            </div>
+        </div>
+
+        <div class="hero-open-widget">
+            <div class="status-row">
+                <div class="status-dot"></div>
+                <span data-en="OPEN TODAY" data-fi="AVOINNA">OPEN TODAY</span>
+            </div>
+            <div class="hours-text">10:30 - 21:00</div>
+        </div>
+    </section>
+
+    <!-- Wolt Section with Particles -->
+    <section class="wolt-section animate-on-scroll">
+        <div class="wolt-particles">
+            <i class="fas fa-pizza-slice wolt-particle"></i>
+            <i class="fas fa-pizza-slice wolt-particle"></i>
+            <i class="fas fa-pizza-slice wolt-particle"></i>
+            <i class="fas fa-fire wolt-particle"></i>
+            <i class="fas fa-star wolt-particle"></i>
+            <i class="fas fa-pizza-slice wolt-particle"></i>
+        </div>
+        <div class="container">
+            <a href="https://wolt.com/en/fin/turku/restaurant/luna-ravintola" target="_blank" class="btn btn-wolt">
+                <i class="fas fa-motorcycle"></i> <span data-en="Order on Wolt" data-fi="Tilaa Woltista">Order on
+                    Wolt</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Our Story Section -->
+    <section id="story" class="section animate-on-scroll">
+        <div class="container story-container">
+            <div class="story-image">
+                <img src="assets/interior.jpg" alt="Luna Ravintola Interior">
+                <div class="story-badge"><i class="fas fa-heart"></i> <span data-en="Family Owned"
+                        data-fi="Perheyritys">Family Owned</span></div>
+            </div>
+            <div class="story-content">
+                <span class="section-label" data-en="Our Story" data-fi="Meidän Tarina">Our Story</span>
+                <h2 class="section-title" data-en="New in the Neighborhood" data-fi="Uusi Naapurustossa">New in the
+                    Neighborhood</h2>
+                <p data-en="Welcome to Luna Ravintola, the newest gem in Ilpoinen, Turku. We are a family-owned restaurant dedicated to serving huge, delicious portions with a smile."
+                    data-fi="Tervetuloa Luna Ravintolaan, Ilpoisen uuteen helmeen Turussa.">
+                    Welcome to Luna Ravintola, the newest gem in Ilpoinen, Turku. We are a family-owned restaurant
+                    dedicated to serving huge, delicious portions with a smile.
+                </p>
+                <div class="badges">
+                    <div class="badge-item">
+                        <div class="check-icon"><i class="fas fa-check"></i></div> <span data-en="Kid Friendly"
+                            data-fi="Lapsiystävällinen">Kid Friendly</span>
+                    </div>
+                    <div class="badge-item">
+                        <div class="check-icon"><i class="fas fa-check"></i></div> <span data-en="Takeaway"
+                            data-fi="Noutoruoka">Takeaway</span>
+                    </div>
+                    <div class="badge-item">
+                        <div class="check-icon"><i class="fas fa-check"></i></div> <span data-en="Wolt Delivery"
+                            data-fi="Wolt-toimitus">Wolt Delivery</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="section animate-on-scroll menu-section">
+        <div class="container">
+            <span class="section-label" data-en="Our Menu" data-fi="Ruokalistamme">Our Menu</span>
+            <h2 class="section-title text-center" data-en="Delicious Choices" data-fi="Herkulliset Valinnat">Delicious
+                Choices</h2>
+
+            <div class="menu-tabs">
+                <button class="tab-btn active" data-category="pizzas">🍕 Pizzas</button>
+                <button class="tab-btn" data-category="burgers">🍔 Burgers</button>
+                <button class="tab-btn" data-category="kebabs">🥙 Kebabs</button>
+                <button class="tab-btn" data-category="sides">🍟 Sides</button>
+            </div>
+
+            <div class="menu-category active" id="pizzas">
+                <div class="menu-grid">
+                    <div class="menu-card featured">
+                        <div class="featured-badge">⭐ Popular</div>
+                        <img src="assets/pizza_bbq.jpg" alt="Luna Special">
+                        <div class="menu-card-content">
+                            <div class="menu-card-header">
+                                <h3>Luna Special</h3><span class="price">€16.90</span>
+                            </div>
+                            <p>Kebab, salami, pepperoni, jalapeño, blue cheese</p>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <img src="assets/pizza_prosciutto.png" alt="Finlandia">
+                        <div class="menu-card-content">
+                            <div class="menu-card-header">
+                                <h3>Finlandia</h3><span class="price">€15.50</span>
+                            </div>
+                            <p>Ham, blue cheese, salami, bacon</p>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <img src="assets/pizza_ham_arugula.jpg" alt="Americana">
+                        <div class="menu-card-content">
+                            <div class="menu-card-header">
+                                <h3>Americana</h3><span class="price">€14.50</span>
+                            </div>
+                            <p>Ham, blue cheese, pineapple</p>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <img src="assets/pizza_mexicana.jpg" alt="Mexicana">
+                        <div class="menu-card-content">
+                            <div class="menu-card-header">
+                                <h3>Mexicana</h3><span class="price">€15.50</span>
+                            </div>
+                            <p>Minced meat, mushrooms, jalapeño, taco sauce</p>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <img src="assets/pizza_bbq.jpg" alt="BBQ Special">
+                        <div class="menu-card-content">
+                            <div class="menu-card-header">
+                                <h3>BBQ Special</h3><span class="price">€16.00</span>
+                            </div>
+                            <p>Beef, onions, jalapeño, BBQ sauce</p>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <img src="assets/pizza_prosciutto.png" alt="Prosciutto">
+                        <div class="menu-card-content">
+                            <div class="menu-card-header">
+                                <h3>Prosciutto</h3><span class="price">€15.00</span>
+                            </div>
+                            <p>Prosciutto, arugula, balsamic glaze</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-category" id="burgers">
+                <div class="menu-grid">
+                    <div class="menu-card"><img src="assets/hero_bg.png" alt="Cheeseburger">
+                        <div class="menu-card-content">
+                            <div class="menu-card-header">
+                                <h3>Cheeseburger</h3><span class="price">€12.00</span>
+                            </div>
+                            <p>Classic beef patty with cheese</p>
+                        </div>
+                    </div>
+                    <div class="menu-card"><img src="assets/hero_bg.png" alt="Double Burger">
+                        <div class="menu-card-content">
+                            <div class="menu-card-header">
+                                <h3>Double Burger</h3><span class="price">€14.00</span>
+                            </div>
+                            <p>Two beef patties with cheese</p>
+                        </div>
+                    </div>
+                    <div class="menu-card"><img src="assets/hero_bg.png" alt="Kids Burger">
+                        <div class="menu-card-content">
+                            <div class="menu-card-header">
+                                <h3>Kids Burger</h3><span class="price">€9.00</span>
+                            </div>
+                            <p>Smaller portion for kids</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-category" id="kebabs">
+                <div class="menu-grid">
+                    <div class="menu-card"><img src="assets/kebab_plate.png" alt="Kebab Plate">
+                        <div class="menu-card-content">
+                            <div class="menu-card-header">
+                                <h3>Kebab Plate</h3><span class="price">€12.90</span>
+                            </div>
+                            <p>With fries, rice, or salad</p>
+                        </div>
+                    </div>
+                    <div class="menu-card"><img src="assets/kebab_plate.png" alt="Kebab Roll">
+                        <div class="menu-card-content">
+                            <div class="menu-card-header">
+                                <h3>Kebab Roll</h3><span class="price">€14.50</span>
+                            </div>
+                            <p>Wrapped with vegetables</p>
+                        </div>
+                    </div>
+                    <div class="menu-card"><img src="assets/kebab_plate.png" alt="Falafel">
+                        <div class="menu-card-content">
+                            <div class="menu-card-header">
+                                <h3>Falafel Plate</h3><span class="price">€12.90</span>
+                            </div>
+                            <p>Vegetarian option</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-category" id="sides">
+                <div class="menu-grid">
+                    <div class="menu-card"><img src="assets/hero_bg.png" alt="Fries">
+                        <div class="menu-card-content">
+                            <div class="menu-card-header">
+                                <h3>French Fries</h3><span class="price">€7.00</span>
+                            </div>
+                            <p>Crispy golden fries</p>
+                        </div>
+                    </div>
+                    <div class="menu-card"><img src="assets/hero_bg.png" alt="Hot Wings">
+                        <div class="menu-card-content">
+                            <div class="menu-card-header">
+                                <h3>Hot Wings (10)</h3><span class="price">€13.00</span>
+                            </div>
+                            <p>Spicy chicken wings</p>
+                        </div>
+                    </div>
+                    <div class="menu-card"><img src="assets/hero_bg.png" alt="Chicken Basket">
+                        <div class="menu-card-content">
+                            <div class="menu-card-header">
+                                <h3>Chicken Basket</h3><span class="price">€15.50</span>
+                            </div>
+                            <p>Crispy chicken with fries</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center" style="margin-top: 30px;">
+                <a href="https://wolt.com/en/fin/turku/restaurant/luna-ravintola" target="_blank"
+                    class="btn btn-primary">
+                    <i class="fas fa-shopping-cart"></i> Order Full Menu on Wolt
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="section animate-on-scroll">
+        <div class="container">
+            <div class="reviews-header">
+                <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                        class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <h2>5.0 / 5.0</h2>
+                <p data-en="Based on 6 Google Reviews" data-fi="Perustuu 6 Google-arvosteluun">Based on 6 Google Reviews
+                </p>
+            </div>
+
+            <h2 class="section-title text-center" data-en="What People Say" data-fi="Mitä Ihmiset Sanovat">What People
+                Say</h2>
+
+            <div class="reviews-grid">
+                <!-- Review 1 -->
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="avatar">J</div>
+                        <div>
+                            <div class="reviewer-name">Jax Lang</div>
+                            <div class="reviewer-sub">Local Guide</div>
+                        </div>
+                        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    </div>
+                    <p class="review-text"
+                        data-en="It's been a while since I had such a good meal! The portions were huge and so delicious! We'll be back for sure ❤️"
+                        data-fi="On kulunut aikaa, kun olen syönyt näin hyvää! Annokset olivat valtavia ja niin herkullisia! Tulemme takaisin ❤️">
+                        "It's been a while since I had such a good meal! The portions were huge and so delicious! We'll
+                        be back for sure ❤️"</p>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="avatar" style="background:#2563eb;">P</div>
+                        <div>
+                            <div class="reviewer-name">Piet Hausener</div>
+                            <div class="reviewer-sub">5 reviews</div>
+                        </div>
+                        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    </div>
+                    <p class="review-text"
+                        data-en="Best pizza in ages!! Really friendly service, fantastic new addition to the neighborhood. The owner and his wife are brilliant 🤩"
+                        data-fi="Paras pizza aikoihin!! Todella ystävällinen palvelu, upea uusi lisä naapurustoon. Omistaja ja hänen vaimonsa ovat loistavia 🤩">
+                        "Best pizza in ages!! Really friendly service, fantastic new addition to the neighborhood. The
+                        owner and his wife are brilliant 🤩"</p>
+                </div>
+
+                <!-- Review 3 - Finnish Original -->
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="avatar" style="background:#16a34a;">M</div>
+                        <div>
+                            <div class="reviewer-name">Matti K.</div>
+                            <div class="reviewer-sub">Paikallinen</div>
+                        </div>
+                        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    </div>
+                    <p class="review-text"
+                        data-en="Absolutely loved the Luna Special pizza! The combination of kebab and jalapeño is perfect. Fast service and very friendly staff."
+                        data-fi="Rakastin Luna Special -pizzaa! Kebabin ja jalapeñon yhdistelmä on täydellinen. Nopea palvelu ja ystävällinen henkilökunta.">
+                        "Rakastin Luna Special -pizzaa! Kebabin ja jalapeñon yhdistelmä on täydellinen. Nopea palvelu ja
+                        ystävällinen henkilökunta."</p>
+                    <button class="translate-btn"><i class="fas fa-language"></i> <span data-en="Translate"
+                            data-fi="Käännä">Translate</span></button>
+                </div>
+
+                <!-- Review 4 - Finnish Original -->
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="avatar" style="background:#9333ea;">S</div>
+                        <div>
+                            <div class="reviewer-name">Sanna T.</div>
+                            <div class="reviewer-sub">Local Guide</div>
+                        </div>
+                        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    </div>
+                    <p class="review-text"
+                        data-en="Finally a good pizza place in Ilpoinen! The kebab plate was generous and delicious. Kids loved their burger too. Will definitely come back!"
+                        data-fi="Vihdoin hyvä pizzapaikka Ilpoisissa! Kebab-annos oli runsas ja herkullinen. Lapset rakastivat hampurilaistaan. Tulemme takaisin!">
+                        "Vihdoin hyvä pizzapaikka Ilpoisissa! Kebab-annos oli runsas ja herkullinen. Lapset rakastivat
+                        hampurilaistaan."</p>
+                    <button class="translate-btn"><i class="fas fa-language"></i> <span data-en="Translate"
+                            data-fi="Käännä">Translate</span></button>
+                </div>
+
+                <!-- Review 5 -->
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="avatar" style="background:#dc2626;">A</div>
+                        <div>
+                            <div class="reviewer-name">Ahmed R.</div>
+                            <div class="reviewer-sub">2 reviews</div>
+                        </div>
+                        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    </div>
+                    <p class="review-text"
+                        data-en="Great new restaurant! The pizza was fresh and hot. Portions are really big - good value for money. Nice family atmosphere."
+                        data-fi="Loistava uusi ravintola! Pizza oli tuoretta ja kuumaa. Annokset ovat todella isoja - hyvä vastine rahalle.">
+                        "Great new restaurant! The pizza was fresh and hot. Portions are really big - good value for
+                        money. Nice family atmosphere."</p>
+                </div>
+
+                <!-- Review 6 - Finnish Original -->
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="avatar" style="background:#0891b2;">L</div>
+                        <div>
+                            <div class="reviewer-name">Laura H.</div>
+                            <div class="reviewer-sub">3 reviews</div>
+                        </div>
+                        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    </div>
+                    <p class="review-text"
+                        data-en="Ordered via Wolt and the food arrived hot and fresh. The Mexicana pizza was amazing - just the right amount of spice!"
+                        data-fi="Tilasin Woltin kautta ja ruoka saapui kuumana ja tuoreena. Mexicana-pizza oli hämmästyttävä - juuri sopivasti mausteinen!">
+                        "Tilasin Woltin kautta ja ruoka saapui kuumana ja tuoreena. Mexicana-pizza oli hämmästyttävä!"
+                    </p>
+                    <button class="translate-btn"><i class="fas fa-language"></i> <span data-en="Translate"
+                            data-fi="Käännä">Translate</span></button>
+                </div>
+            </div>
+
+            <div class="text-center" style="margin-top: 25px;">
+                <a href="https://www.google.com/maps/search/Luna+Ravintola+Turku" target="_blank"
+                    class="btn btn-secondary">
+                    <i class="fab fa-google"></i> <span data-en="See All Google Reviews"
+                        data-fi="Katso Kaikki Arvostelut">See All Google Reviews</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Section - Side by Side with Map -->
+    <section id="location" class="location-section">
+        <div class="container">
+            <div class="location-grid">
+                <!-- Left: Address with floating icons -->
+                <div class="location-info">
+                    <div class="floating-icons">
+                        <i class="fas fa-pizza-slice float-icon"></i>
+                        <i class="fas fa-fire float-icon"></i>
+                        <i class="fas fa-star float-icon"></i>
+                    </div>
+                    <div class="location-icon"><i class="fas fa-map-marker-alt"></i></div>
+                    <h3 class="location-address">Lauklähteenkatu 10</h3>
+                    <p class="location-sub">20740 Turku (Ilpoinen)</p>
+                    <div class="opening-hours">
+                        <p><strong>Mon-Thu:</strong> 10:30-21:00</p>
+                        <p><strong>Fri-Sat:</strong> 10:30-22:00</p>
+                        <p><strong>Sun:</strong> 12:00-21:00</p>
+                    </div>
+                    <div class="location-buttons">
+                        <a href="tel:0413154126" class="btn btn-dark"><i class="fas fa-phone"></i> Call Us</a>
+                        <a href="https://maps.google.com/?q=Lauklähteenkatu+10,+Turku" target="_blank"
+                            class="btn btn-outline"><i class="fas fa-directions"></i> Directions</a>
+                    </div>
+                </div>
+
+                <!-- Right: Interactive Map -->
+                <div class="location-map">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1920!2d22.2869!3d60.4436!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sLaukl%C3%A4hteenkatu%2010%2C%2020740%20Turku!5e0!3m2!1sen!2sfi!4v1234567890"
+                        allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-logo">
+                <div class="logo-icon"><i class="fas fa-pizza-slice"></i></div>
+                <div>
+                    <div class="logo-text">LUNA</div><span class="logo-sub">RAVINTOLA</span>
+                </div>
+            </div>
+            <div class="footer-links">
+                <a href="tel:0413154126"><i class="fas fa-phone"></i> 041 3154126</a>
+                <a href="https://wolt.com/en/fin/turku/restaurant/luna-ravintola" target="_blank"><i
+                        class="fas fa-motorcycle"></i> Wolt</a>
+            </div>
+            <p class="copyright">&copy; 2026 Luna Ravintola</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

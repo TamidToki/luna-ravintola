@@ -1,0 +1,91 @@
+document.addEventListener('DOMContentLoaded', () => {
+    // Theme Toggle
+    const themeToggle = document.getElementById('theme-toggle');
+    const body = document.body;
+    const themeIcon = themeToggle ? themeToggle.querySelector('i') : null;
+
+    if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+
+            if (body.classList.contains('dark-mode')) {
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+            } else {
+                themeIcon.classList.remove('fa-sun');
+                themeIcon.classList.add('fa-moon');
+            }
+        });
+    }
+
+    // Mobile Menu Overlay
+    const hamburger = document.querySelector('.hamburger');
+    const menuOverlay = document.querySelector('.mobile-menu-overlay');
+    const overlayLinks = document.querySelectorAll('.mobile-menu-links a');
+
+    if (hamburger && menuOverlay) {
+        hamburger.addEventListener('click', () => {
+            menuOverlay.classList.toggle('active');
+            const icon = hamburger.querySelector('i');
+            if (menuOverlay.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        // Close menu when link is clicked
+        overlayLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menuOverlay.classList.remove('active');
+                const icon = hamburger.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            });
+        });
+    }
+
+    // Review Translation
+    const translateBtn = document.getElementById('translate-btn');
+    let isEnglish = false;
+
+    if (translateBtn) {
+        translateBtn.addEventListener('click', () => {
+            const reviewTexts = document.querySelectorAll('.review-text');
+
+            reviewTexts.forEach(text => {
+                if (!isEnglish) {
+                    text.textContent = `"${text.getAttribute('data-en')}"`;
+                } else {
+                    text.textContent = `"${text.getAttribute('data-fi')}"`;
+                }
+            });
+
+            isEnglish = !isEnglish;
+            if (isEnglish) {
+                translateBtn.innerHTML = '<i class="fas fa-undo"></i> Show Original';
+            } else {
+                translateBtn.innerHTML = '<i class="fas fa-language"></i> Translate Reviews';
+            }
+        });
+    }
+
+    // Scroll Animations
+    const observerOptions = {
+        threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.animate-on-scroll').forEach((elem) => {
+        observer.observe(elem);
+    });
+});
