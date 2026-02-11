@@ -488,20 +488,15 @@ img {
     gap: 10px;
 }
 
-.logo-icon {
-    width: 40px;
-    height: 40px;
-    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
-    font-size: 1.1rem;
+.logo-img {
+    height: 45px;
+    width: auto;
+    object-fit: contain;
     transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-.logo:hover .logo-icon {
+.logo:hover .logo-img,
+.footer-logo:hover .logo-img {
     transform: rotate(-15deg) scale(1.1);
 }
 
