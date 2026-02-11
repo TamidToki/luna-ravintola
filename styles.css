@@ -1624,4 +1624,74 @@ footer {
 ::-webkit-scrollbar-thumb {
     background: var(--primary);
     border-radius: 10px;
+}/* CSS Update for Kebab & Wings Centering */
+
+/* Center Category Subtitles */
+.category-subtitle {
+    text-align: center;
+    margin: 35px 0 20px;
+    font-size: 1.5rem;
+    color: var(--primary);
+    font-family: var(--font-heading);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.category-subtitle::before,
+.category-subtitle::after {
+    content: "";
+    height: 2px;
+    width: 40px;
+    background: var(--primary-light);
+    border-radius: 2px;
+}
+
+/* Specific centering for Kebab, Falafel, Chicken, Wings, Grill */
+#kebabs .menu-card-header,
+#wings .menu-card-header {
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+    text-align: center;
+}
+
+#kebabs .menu-card-content,
+#wings .menu-card-content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+#kebabs .menu-card-content p,
+#wings .menu-card-content p {
+    margin-bottom: 10px;
+}
+
+#kebabs .price,
+#wings .price {
+    font-size: 1.1rem;
+    background: rgba(255, 112, 67, 0.1);
+    padding: 5px 12px;
+    border-radius: 20px;
+}
+
+/* Adjust grid for these items if needed */
+#kebabs .menu-card,
+#wings .menu-card {
+    min-height: 280px;
+    /* Ensure consistent height */
+    display: flex;
+    flex-direction: column;
+}
+
+#kebabs .menu-card img,
+#wings .menu-card img {
+    height: 180px;
+    /* Slightly smaller image to give room for text */
 }
