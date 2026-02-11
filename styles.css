@@ -1081,17 +1081,16 @@ body.dark-mode .menu-list-item.highlight {
     position: sticky;
     top: 85px;
     z-index: 100;
-    width: 100vw;
-    margin-left: -50vw;
-    left: 50%;
-    right: 50%;
+    width: 100%;
     background: rgba(255, 255, 255, 0.5);
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
     padding: 15px 0;
     margin-bottom: 30px;
     display: flex;
     justify-content: center;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
 }
 
 body.dark-mode .menu-tabs-wrapper {
@@ -1104,10 +1103,8 @@ body.dark-mode .menu-tabs-wrapper {
     flex-wrap: wrap;
     justify-content: center;
     gap: 10px;
-    /* Reset sticky styles as wrapper handles them */
     width: 100%;
     max-width: 1200px;
-    /* Match container max-width */
     margin: 0 auto;
     padding: 0 20px;
 }
@@ -1624,7 +1621,9 @@ footer {
 ::-webkit-scrollbar-thumb {
     background: var(--primary);
     border-radius: 10px;
-}/* CSS Update for Kebab & Wings Centering */
+}
+
+/* CSS Update for Kebab & Wings Centering */
 
 /* Center Category Subtitles */
 .category-subtitle {
