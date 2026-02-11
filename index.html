@@ -1,11 +1,11 @@
-<!-- Build Trigger: Luna Ravintola Final -->
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Luna Ravintola - The Best Pizza in Turku. Huge portions, fresh ingredients, unforgettable taste.">
+        content="Luna Ravintola - The Best Pizza in Turku. Huge portions, fresh ingredients, unforgettable taste. Ilpoinen, Turku.">
     <title>Luna Ravintola | Turku</title>
     <link rel="canonical" href="https://luna-ravintola.vercel.app/">
 
@@ -44,8 +44,8 @@
       },
       "geo": {
         "@type": "GeoCoordinates",
-        "latitude": 60.4191,
-        "longitude": 22.2869
+        "latitude": 60.4220529,
+        "longitude": 22.2835812
       },
       "openingHoursSpecification": [
         {
@@ -198,24 +198,6 @@
         </div>
     </section>
 
-    <!-- Wolt Section with Particles -->
-    <section class="wolt-section animate-on-scroll">
-        <div class="wolt-particles">
-            <i class="fas fa-pizza-slice wolt-particle"></i>
-            <i class="fas fa-pizza-slice wolt-particle"></i>
-            <i class="fas fa-pizza-slice wolt-particle"></i>
-            <i class="fas fa-fire wolt-particle"></i>
-            <i class="fas fa-star wolt-particle"></i>
-            <i class="fas fa-pizza-slice wolt-particle"></i>
-        </div>
-        <div class="container">
-            <a href="https://wolt.com/en/fin/turku/restaurant/luna-ravintola" target="_blank" class="btn btn-wolt">
-                <i class="fas fa-motorcycle"></i> <span data-en="Order on Wolt" data-fi="Tilaa Woltista">Order on
-                    Wolt</span>
-            </a>
-        </div>
-    </section>
-
     <!-- Our Story Section -->
     <section id="story" class="section animate-on-scroll">
         <div class="container story-container">
@@ -229,7 +211,7 @@
                 <h2 class="section-title" data-en="New in the Neighborhood" data-fi="Uusi Naapurustossa">New in the
                     Neighborhood</h2>
                 <p data-en="Welcome to Luna Ravintola, the newest gem in Ilpoinen, Turku. We are a family-owned restaurant dedicated to serving huge, delicious portions with a smile."
-                    data-fi="Tervetuloa Luna Ravintolaan, Ilpoisen uuteen helmeen Turussa.">
+                    data-fi="Tervetuloa Luna Ravintolaan, Ilpoisen uuteen helmeen Turussa. Olemme perheyritys, joka on omistautunut tarjoamaan suuria, herkullisia annoksia hymyillen.">
                     Welcome to Luna Ravintola, the newest gem in Ilpoinen, Turku. We are a family-owned restaurant
                     dedicated to serving huge, delicious portions with a smile.
                 </p>
@@ -243,8 +225,8 @@
                             data-fi="Noutoruoka">Takeaway</span>
                     </div>
                     <div class="badge-item">
-                        <div class="check-icon"><i class="fas fa-check"></i></div> <span data-en="Wolt Delivery"
-                            data-fi="Wolt-toimitus">Wolt Delivery</span>
+                        <div class="check-icon"><i class="fas fa-check"></i></div> <span data-en="Dine In"
+                            data-fi="Syö paikan päällä">Dine In</span>
                     </div>
                 </div>
             </div>
@@ -259,164 +241,485 @@
                 Choices</h2>
 
             <div class="menu-tabs">
-                <button class="tab-btn active" data-category="pizzas">🍕 Pizzas</button>
-                <button class="tab-btn" data-category="burgers">🍔 Burgers</button>
-                <button class="tab-btn" data-category="kebabs">🥙 Kebabs</button>
-                <button class="tab-btn" data-category="sides">🍟 Sides</button>
+                <button class="tab-btn active" data-category="pizzas">🍕 Pizzat</button>
+                <button class="tab-btn" data-category="burgers">🍔 Hampurilaiset</button>
+                <button class="tab-btn" data-category="kebabs">🥙 Kebab</button>
+                <button class="tab-btn" data-category="chicken">🍗 Kana & Wings</button>
+                <button class="tab-btn" data-category="grill">🍟 Grilli</button>
+                <button class="tab-btn" data-category="salads">🥗 Salaatit</button>
             </div>
 
+            <!-- ==================== PIZZAT ==================== -->
             <div class="menu-category active" id="pizzas">
-                <div class="menu-grid">
-                    <div class="menu-card featured">
-                        <div class="featured-badge">⭐ Popular</div>
-                        <img src="assets/pizza_bbq.jpg" alt="Luna Special">
-                        <div class="menu-card-content">
-                            <div class="menu-card-header">
-                                <h3>Luna Special</h3><span class="price">€16.90</span>
-                            </div>
-                            <p>Kebab, salami, pepperoni, jalapeño, blue cheese</p>
+                <!-- Featured Pizza Images -->
+                <div class="menu-featured-row">
+                    <div class="featured-img-card">
+                        <img src="assets/pizza_bbq.jpg" alt="Luna Special Pizza">
+                        <span class="featured-label">⭐ Luna Special</span>
+                    </div>
+                    <div class="featured-img-card">
+                        <img src="assets/pizza_mexicana.jpg" alt="Mexicana Pizza">
+                        <span class="featured-label">🌶️ Mexicana</span>
+                    </div>
+                    <div class="featured-img-card">
+                        <img src="assets/pizza_prosciutto.png" alt="Finlandia Pizza">
+                        <span class="featured-label">🇫🇮 Finlandia</span>
+                    </div>
+                </div>
+
+                <p class="size-info" data-en="All pizzas available in Normal and Family (Perhe) size"
+                    data-fi="Kaikki pizzat saatavana normaalina ja perhekoossa">All pizzas available in Normal and
+                    Family
+                    (Perhe) size</p>
+
+                <div class="menu-list">
+                    <div class="menu-list-header">
+                        <span>Pizza</span>
+                        <div class="price-labels">
+                            <span data-en="Normal" data-fi="Normaali">Normal</span>
+                            <span data-en="Family" data-fi="Perhe">Family</span>
                         </div>
                     </div>
-                    <div class="menu-card">
-                        <img src="assets/pizza_prosciutto.png" alt="Finlandia">
-                        <div class="menu-card-content">
-                            <div class="menu-card-header">
-                                <h3>Finlandia</h3><span class="price">€15.50</span>
-                            </div>
-                            <p>Ham, blue cheese, salami, bacon</p>
+
+                    <div class="menu-list-item">
+                        <div class="item-info">
+                            <h4>Margherita</h4>
+                            <p>Juusto, pizzakastike, mozzarella</p>
+                        </div>
+                        <div class="item-prices">
+                            <span class="price">€15.00</span>
+                            <span class="price family">€26.00</span>
                         </div>
                     </div>
-                    <div class="menu-card">
-                        <img src="assets/pizza_ham_arugula.jpg" alt="Americana">
-                        <div class="menu-card-content">
-                            <div class="menu-card-header">
-                                <h3>Americana</h3><span class="price">€14.50</span>
-                            </div>
-                            <p>Ham, blue cheese, pineapple</p>
+
+                    <div class="menu-list-item">
+                        <div class="item-info">
+                            <h4>Bolognese</h4>
+                            <p>Jauheliha</p>
+                        </div>
+                        <div class="item-prices">
+                            <span class="price">€14.00</span>
+                            <span class="price family">€25.90</span>
                         </div>
                     </div>
-                    <div class="menu-card">
-                        <img src="assets/pizza_mexicana.jpg" alt="Mexicana">
-                        <div class="menu-card-content">
-                            <div class="menu-card-header">
-                                <h3>Mexicana</h3><span class="price">€15.50</span>
-                            </div>
-                            <p>Minced meat, mushrooms, jalapeño, taco sauce</p>
+
+                    <div class="menu-list-item">
+                        <div class="item-info">
+                            <h4>Americana</h4>
+                            <p>Kinkku, aurajuusto, ananas</p>
+                        </div>
+                        <div class="item-prices">
+                            <span class="price">€14.50</span>
+                            <span class="price family">€25.50</span>
                         </div>
                     </div>
-                    <div class="menu-card">
-                        <img src="assets/pizza_bbq.jpg" alt="BBQ Special">
-                        <div class="menu-card-content">
-                            <div class="menu-card-header">
-                                <h3>BBQ Special</h3><span class="price">€16.00</span>
-                            </div>
-                            <p>Beef, onions, jalapeño, BBQ sauce</p>
+
+                    <div class="menu-list-item">
+                        <div class="item-info">
+                            <h4>Kebab Pizza</h4>
+                            <p>Kebab, punasipuli, turkinpippuri, kirsikkatomaatti</p>
+                        </div>
+                        <div class="item-prices">
+                            <span class="price">€15.00</span>
+                            <span class="price family">€27.50</span>
                         </div>
                     </div>
-                    <div class="menu-card">
-                        <img src="assets/pizza_prosciutto.png" alt="Prosciutto">
-                        <div class="menu-card-content">
-                            <div class="menu-card-header">
-                                <h3>Prosciutto</h3><span class="price">€15.00</span>
-                            </div>
-                            <p>Prosciutto, arugula, balsamic glaze</p>
+
+                    <div class="menu-list-item">
+                        <div class="item-info">
+                            <h4>Chicken</h4>
+                            <p>Kana, aurajuusto, ananas</p>
+                        </div>
+                        <div class="item-prices">
+                            <span class="price">€15.50</span>
+                            <span class="price family">€28.00</span>
+                        </div>
+                    </div>
+
+                    <div class="menu-list-item">
+                        <div class="item-info">
+                            <h4>Kasvispizza</h4>
+                            <p>Paprika, herkkusieni, oliivi, ananas, fetajuusto</p>
+                        </div>
+                        <div class="item-prices">
+                            <span class="price">€14.50</span>
+                            <span class="price family">€25.50</span>
+                        </div>
+                    </div>
+
+                    <div class="menu-list-item">
+                        <div class="item-info">
+                            <h4>Frutti di Mare</h4>
+                            <p>Tonnikala, katkarapu, simpukka</p>
+                        </div>
+                        <div class="item-prices">
+                            <span class="price">€15.50</span>
+                            <span class="price family">€28.00</span>
+                        </div>
+                    </div>
+
+                    <div class="menu-list-item">
+                        <div class="item-info">
+                            <h4>Julia</h4>
+                            <p>Kinkku, ananas, katkarapu, aurajuusto</p>
+                        </div>
+                        <div class="item-prices">
+                            <span class="price">€15.00</span>
+                            <span class="price family">€27.00</span>
+                        </div>
+                    </div>
+
+                    <div class="menu-list-item">
+                        <div class="item-info">
+                            <h4>Quatro Stagione</h4>
+                            <p>Kinkku, tonnikala, salami, katkarapu</p>
+                        </div>
+                        <div class="item-prices">
+                            <span class="price">€15.50</span>
+                            <span class="price family">€28.00</span>
+                        </div>
+                    </div>
+
+                    <div class="menu-list-item">
+                        <div class="item-info">
+                            <h4>Romeo</h4>
+                            <p>Salami, pepperoni, aurajuusto, katkarapu, ananas</p>
+                        </div>
+                        <div class="item-prices">
+                            <span class="price">€15.90</span>
+                            <span class="price family">€28.90</span>
+                        </div>
+                    </div>
+
+                    <div class="menu-list-item highlight">
+                        <div class="item-info">
+                            <h4>Mexicana 🌶️</h4>
+                            <p>Jauheliha, pepperoni, salami, jalapeño, tacokastike</p>
+                        </div>
+                        <div class="item-prices">
+                            <span class="price">€15.50</span>
+                            <span class="price family">€28.50</span>
+                        </div>
+                    </div>
+
+                    <div class="menu-list-item">
+                        <div class="item-info">
+                            <h4>Empire</h4>
+                            <p>Kinkku, salami, katkarapu, aurajuusto, valkosipuli, punasipuli, tuplajuusto</p>
+                        </div>
+                        <div class="item-prices">
+                            <span class="price">€15.90</span>
+                            <span class="price family">€28.90</span>
+                        </div>
+                    </div>
+
+                    <div class="menu-list-item">
+                        <div class="item-info">
+                            <h4>Helsinki</h4>
+                            <p>Jauheliha, salami, kinkku, kebab</p>
+                        </div>
+                        <div class="item-prices">
+                            <span class="price">€15.50</span>
+                            <span class="price family">€28.00</span>
+                        </div>
+                    </div>
+
+                    <div class="menu-list-item">
+                        <div class="item-info">
+                            <h4>Finlandia 🇫🇮</h4>
+                            <p>Kinkku, aurajuusto, salami, pekoni</p>
+                        </div>
+                        <div class="item-prices">
+                            <span class="price">€15.50</span>
+                            <span class="price family">€28.00</span>
+                        </div>
+                    </div>
+
+                    <div class="menu-list-item">
+                        <div class="item-info">
+                            <h4>Beef</h4>
+                            <p>Naudanliha, salami, pepperoni, jauheliha</p>
+                        </div>
+                        <div class="item-prices">
+                            <span class="price">€16.00</span>
+                            <span class="price family">€29.00</span>
+                        </div>
+                    </div>
+
+                    <div class="menu-list-item highlight">
+                        <div class="item-info">
+                            <h4>Luna Special ⭐</h4>
+                            <p>Kebab, salami, pepperoni, jalapeño, aurajuusto, jauheliha</p>
+                        </div>
+                        <div class="item-prices">
+                            <span class="price">€16.90</span>
+                            <span class="price family">€29.50</span>
+                        </div>
+                    </div>
+
+                    <div class="menu-list-divider"></div>
+
+                    <div class="menu-list-item">
+                        <div class="item-info">
+                            <h4>Fantasia 2</h4>
+                            <p data-en="2 toppings of your choice" data-fi="2 täyttettä oman valinnan mukaan">2
+                                toppings of your choice</p>
+                        </div>
+                        <div class="item-prices">
+                            <span class="price">€14.00</span>
+                            <span class="price family">€24.00</span>
+                        </div>
+                    </div>
+
+                    <div class="menu-list-item">
+                        <div class="item-info">
+                            <h4>Fantasia 3</h4>
+                            <p data-en="3 toppings of your choice" data-fi="3 täyttettä oman valinnan mukaan">3
+                                toppings of your choice</p>
+                        </div>
+                        <div class="item-prices">
+                            <span class="price">€15.00</span>
+                            <span class="price family">€26.00</span>
+                        </div>
+                    </div>
+
+                    <div class="menu-list-item">
+                        <div class="item-info">
+                            <h4>Fantasia 4</h4>
+                            <p data-en="4 toppings of your choice" data-fi="4 täyttettä oman valinnan mukaan">4
+                                toppings of your choice</p>
+                        </div>
+                        <div class="item-prices">
+                            <span class="price">€16.00</span>
+                            <span class="price family">€28.00</span>
                         </div>
                     </div>
                 </div>
             </div>
 
+            <!-- ==================== HAMPURILAISET ==================== -->
             <div class="menu-category" id="burgers">
+                <p class="size-info" data-en="Also available as a meal with fries + 0.33l drink"
+                    data-fi="Saatavana myös ateriana: ranskalaiset + 0,33l juoma">Also available as a meal with fries +
+                    0.33l drink</p>
                 <div class="menu-grid">
-                    <div class="menu-card"><img src="assets/hero_bg.png" alt="Cheeseburger">
+                    <div class="menu-card">
+                        <img src="assets/burger.png" alt="Juustohampurilainen">
                         <div class="menu-card-content">
                             <div class="menu-card-header">
-                                <h3>Cheeseburger</h3><span class="price">€12.00</span>
+                                <h3>Juustohampurilainen</h3><span class="price">€12.00</span>
                             </div>
-                            <p>Classic beef patty with cheese</p>
+                            <p data-en="Classic cheeseburger" data-fi="Klassinen juustohampurilainen">Classic
+                                cheeseburger</p>
                         </div>
                     </div>
-                    <div class="menu-card"><img src="assets/hero_bg.png" alt="Double Burger">
+                    <div class="menu-card">
+                        <img src="assets/burger.png" alt="Kerroshampurilainen">
                         <div class="menu-card-content">
                             <div class="menu-card-header">
-                                <h3>Double Burger</h3><span class="price">€14.00</span>
+                                <h3>Kerroshampurilainen</h3><span class="price">€14.00</span>
                             </div>
-                            <p>Two beef patties with cheese</p>
+                            <p data-en="Double burger" data-fi="Tuplahampurilainen">Double burger</p>
                         </div>
                     </div>
-                    <div class="menu-card"><img src="assets/hero_bg.png" alt="Kids Burger">
+                    <div class="menu-card">
+                        <img src="assets/burger.png" alt="Lasten hampurilainen">
                         <div class="menu-card-content">
                             <div class="menu-card-header">
-                                <h3>Kids Burger</h3><span class="price">€9.00</span>
+                                <h3>Lasten hampurilainen</h3><span class="price">€9.00</span>
                             </div>
-                            <p>Smaller portion for kids</p>
+                            <p data-en="Kids burger" data-fi="Lasten hampurilainen">Kids burger</p>
                         </div>
                     </div>
                 </div>
             </div>
 
+            <!-- ==================== KEBAB ==================== -->
             <div class="menu-category" id="kebabs">
                 <div class="menu-grid">
-                    <div class="menu-card"><img src="assets/kebab_plate.png" alt="Kebab Plate">
+                    <div class="menu-card">
+                        <img src="assets/kebab_plate.png" alt="Kebab-annos">
                         <div class="menu-card-content">
                             <div class="menu-card-header">
-                                <h3>Kebab Plate</h3><span class="price">€12.90</span>
+                                <h3>Kebab-annos</h3><span class="price">€12.90</span>
                             </div>
-                            <p>With fries, rice, or salad</p>
+                            <p data-en="Kebab plate with your choice of side (fries, rice, or salad)"
+                                data-fi="Kebab valitsemallasi lisukkeella">Kebab plate with your choice of side</p>
                         </div>
                     </div>
-                    <div class="menu-card"><img src="assets/kebab_plate.png" alt="Kebab Roll">
+                    <div class="menu-card">
+                        <img src="assets/kebab_plate.png" alt="Rullakebab">
                         <div class="menu-card-content">
                             <div class="menu-card-header">
-                                <h3>Kebab Roll</h3><span class="price">€14.50</span>
+                                <h3>Rullakebab</h3><span class="price">€14.50</span>
                             </div>
-                            <p>Wrapped with vegetables</p>
+                            <p data-en="Kebab roll with your choice of side"
+                                data-fi="Rullakebab valitsemallasi lisukkeella">Kebab roll with your choice of side</p>
                         </div>
                     </div>
-                    <div class="menu-card"><img src="assets/kebab_plate.png" alt="Falafel">
+                    <div class="menu-card">
+                        <img src="assets/falafel.png" alt="Falafel-annos">
                         <div class="menu-card-content">
                             <div class="menu-card-header">
-                                <h3>Falafel Plate</h3><span class="price">€12.90</span>
+                                <h3>Falafel-annos</h3><span class="price">€12.90</span>
                             </div>
-                            <p>Vegetarian option</p>
+                            <p data-en="Falafel plate with your choice of side (vegetarian)"
+                                data-fi="Falafel valitsemallasi lisukkeella (kasvis)">Falafel plate with your choice of
+                                side (vegetarian)</p>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="menu-category" id="sides">
+            <!-- ==================== KANA & WINGS ==================== -->
+            <div class="menu-category" id="chicken">
                 <div class="menu-grid">
-                    <div class="menu-card"><img src="assets/hero_bg.png" alt="Fries">
+                    <div class="menu-card">
+                        <img src="assets/kebab_plate.png" alt="Kana-annos">
                         <div class="menu-card-content">
                             <div class="menu-card-header">
-                                <h3>French Fries</h3><span class="price">€7.00</span>
+                                <h3>Kana-annos</h3><span class="price">€12.90</span>
                             </div>
-                            <p>Crispy golden fries</p>
+                            <p data-en="Chicken plate with your choice of side"
+                                data-fi="Kana valitsemallasi lisukkeella">Chicken plate with your choice of side</p>
                         </div>
                     </div>
-                    <div class="menu-card"><img src="assets/hero_bg.png" alt="Hot Wings">
+                    <div class="menu-card featured">
+                        <div class="featured-badge">🔥 Popular</div>
+                        <img src="assets/kebab_plate.png" alt="Hot Wings 10 kpl">
                         <div class="menu-card-content">
                             <div class="menu-card-header">
-                                <h3>Hot Wings (10)</h3><span class="price">€13.00</span>
+                                <h3>Hot Wings (10 kpl)</h3><span class="price">€13.00</span>
                             </div>
-                            <p>Spicy chicken wings</p>
+                            <p data-en="With fries, celery, carrots & hot wings sauce"
+                                data-fi="Ranskalaiset, selleri, porkkana ja hot wings -kastike">With fries, celery,
+                                carrots & hot wings sauce</p>
                         </div>
                     </div>
-                    <div class="menu-card"><img src="assets/hero_bg.png" alt="Chicken Basket">
+                    <div class="menu-card">
+                        <img src="assets/kebab_plate.png" alt="Hot Wings 15 kpl">
                         <div class="menu-card-content">
                             <div class="menu-card-header">
-                                <h3>Chicken Basket</h3><span class="price">€15.50</span>
+                                <h3>Hot Wings (15 kpl)</h3><span class="price">€16.00</span>
                             </div>
-                            <p>Crispy chicken with fries</p>
+                            <p data-en="With fries, celery, carrots & hot wings sauce"
+                                data-fi="Ranskalaiset, selleri, porkkana ja hot wings -kastike">With fries, celery,
+                                carrots & hot wings sauce</p>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <img src="assets/kebab_plate.png" alt="Hot Wings 20 kpl">
+                        <div class="menu-card-content">
+                            <div class="menu-card-header">
+                                <h3>Hot Wings (20 kpl)</h3><span class="price">€21.00</span>
+                            </div>
+                            <p data-en="With fries, celery, carrots & hot wings sauce"
+                                data-fi="Ranskalaiset, selleri, porkkana ja hot wings -kastike">With fries, celery,
+                                carrots & hot wings sauce</p>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <img src="assets/kebab_plate.png" alt="Hot Wings 25 kpl">
+                        <div class="menu-card-content">
+                            <div class="menu-card-header">
+                                <h3>Hot Wings (25 kpl)</h3><span class="price">€24.00</span>
+                            </div>
+                            <p data-en="With fries, celery, carrots & hot wings sauce"
+                                data-fi="Ranskalaiset, selleri, porkkana ja hot wings -kastike">With fries, celery,
+                                carrots & hot wings sauce</p>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="text-center" style="margin-top: 30px;">
-                <a href="https://wolt.com/en/fin/turku/restaurant/luna-ravintola" target="_blank"
-                    class="btn btn-primary">
-                    <i class="fas fa-shopping-cart"></i> Order Full Menu on Wolt
-                </a>
+            <!-- ==================== GRILLI ==================== -->
+            <div class="menu-category" id="grill">
+                <div class="menu-grid">
+                    <div class="menu-card">
+                        <img src="assets/fries.png" alt="Ranskalaiset">
+                        <div class="menu-card-content">
+                            <div class="menu-card-header">
+                                <h3>Ranskalaiset</h3><span class="price">€7.00</span>
+                            </div>
+                            <p data-en="French fries with paprika mayo & ketchup"
+                                data-fi="Paprikamajoneesi ja ketsuppi">French fries with paprika mayo & ketchup</p>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <img src="assets/fries.png" alt="Makkaraperunat">
+                        <div class="menu-card-content">
+                            <div class="menu-card-header">
+                                <h3>Makkaraperunat</h3><span class="price">€15.50</span>
+                            </div>
+                            <p data-en="Sausage fries with salad, pickle, ketchup, mayo & mustard"
+                                data-fi="Ranskalaiset, salaatti, punasipuli, kurkkusalaatti, ketsuppi, majoneesi ja sinappi">
+                                Sausage fries with salad, pickle, ketchup, mayo & mustard</p>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <img src="assets/fries.png" alt="Kanakori">
+                        <div class="menu-card-content">
+                            <div class="menu-card-header">
+                                <h3>Kanakori</h3><span class="price">€15.50</span>
+                            </div>
+                            <p data-en="Chicken basket with fries, salad, tomato, cucumber & paprika mayo"
+                                data-fi="Ranskalaiset, salaatti, tomaatti, kurkku, paprikamajoneesi, ketsuppi">Chicken
+                                basket with fries, salad & paprika mayo</p>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <img src="assets/fries.png" alt="Lasten kanakori">
+                        <div class="menu-card-content">
+                            <div class="menu-card-header">
+                                <h3>Lasten kanakori</h3><span class="price">€8.00</span>
+                            </div>
+                            <p data-en="Kids chicken basket with fries" data-fi="Lasten kanakori ranskalaisilla">Kids
+                                chicken basket with fries</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ==================== SALAATIT ==================== -->
+            <div class="menu-category" id="salads">
+                <div class="menu-grid">
+                    <div class="menu-card">
+                        <img src="assets/salad.png" alt="Kanasalaatti">
+                        <div class="menu-card-content">
+                            <div class="menu-card-header">
+                                <h3>Kanasalaatti</h3><span class="price">€15.00</span>
+                            </div>
+                            <p data-en="Chicken salad" data-fi="Kanasalaatti">Chicken salad</p>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <img src="assets/salad.png" alt="Katkarapusalaatti">
+                        <div class="menu-card-content">
+                            <div class="menu-card-header">
+                                <h3>Katkarapusalaatti</h3><span class="price">€15.50</span>
+                            </div>
+                            <p data-en="Shrimp salad" data-fi="Katkarapusalaatti">Shrimp salad</p>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <img src="assets/salad.png" alt="Tonnikalasalaatti">
+                        <div class="menu-card-content">
+                            <div class="menu-card-header">
+                                <h3>Tonnikalasalaatti</h3><span class="price">€15.90</span>
+                            </div>
+                            <p data-en="Tuna salad" data-fi="Tonnikalasalaatti">Tuna salad</p>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <img src="assets/salad.png" alt="Fetasalaatti">
+                        <div class="menu-card-content">
+                            <div class="menu-card-header">
+                                <h3>Fetasalaatti</h3><span class="price">€15.50</span>
+                            </div>
+                            <p data-en="Feta cheese salad" data-fi="Fetasalaatti">Feta cheese salad</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -542,9 +845,9 @@
                                 class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                     </div>
                     <p class="review-text"
-                        data-en="Ordered via Wolt and the food arrived hot and fresh. The Mexicana pizza was amazing - just the right amount of spice!"
-                        data-fi="Tilasin Woltin kautta ja ruoka saapui kuumana ja tuoreena. Mexicana-pizza oli hämmästyttävä - juuri sopivasti mausteinen!">
-                        "Tilasin Woltin kautta ja ruoka saapui kuumana ja tuoreena. Mexicana-pizza oli hämmästyttävä!"
+                        data-en="The Mexicana pizza was amazing - just the right amount of spice! Food arrived hot and fresh."
+                        data-fi="Mexicana-pizza oli hämmästyttävä - juuri sopivasti mausteinen! Ruoka saapui kuumana ja tuoreena.">
+                        "Mexicana-pizza oli hämmästyttävä - juuri sopivasti mausteinen!"
                     </p>
                     <button class="translate-btn"><i class="fas fa-language"></i> <span data-en="Translate"
                             data-fi="Käännä">Translate</span></button>
@@ -590,7 +893,7 @@
                 <!-- Right: Interactive Map -->
                 <div class="location-map">
                     <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1920!2d22.2869!3d60.4436!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sLaukl%C3%A4hteenkatu%2010%2C%2020740%20Turku!5e0!3m2!1sen!2sfi!4v1234567890"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1920!2d22.2835812!3d60.4220529!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sLaukl%C3%A4hteenkatu%2010%2C%2020740%20Turku!5e0!3m2!1sen!2sfi!4v1234567890"
                         allowfullscreen="" loading="lazy"></iframe>
                 </div>
             </div>
@@ -608,8 +911,8 @@
             </div>
             <div class="footer-links">
                 <a href="tel:0413154126"><i class="fas fa-phone"></i> 041 3154126</a>
-                <a href="https://wolt.com/en/fin/turku/restaurant/luna-ravintola" target="_blank"><i
-                        class="fas fa-motorcycle"></i> Wolt</a>
+                <a href="https://maps.google.com/?q=Lauklähteenkatu+10,+Turku" target="_blank"><i
+                        class="fas fa-map-marker-alt"></i> Lauklähteenkatu 10, Turku</a>
             </div>
             <p class="copyright">&copy; 2026 Luna Ravintola</p>
         </div>
