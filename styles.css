@@ -1077,28 +1077,60 @@ body.dark-mode .menu-list-item.highlight {
     background: var(--card-bg);
 }
 
+.menu-tabs-wrapper {
+    position: sticky;
+    top: 85px;
+    z-index: 100;
+    width: 100vw;
+    margin-left: -50vw;
+    left: 50%;
+    right: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    padding: 15px 0;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+body.dark-mode .menu-tabs-wrapper {
+    background: rgba(15, 15, 15, 0.5);
+    border-bottom-color: rgba(255, 255, 255, 0.05);
+}
+
 .menu-tabs {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 10px;
-    margin-bottom: 30px;
-    position: sticky;
-    top: 85px;
-    z-index: 100;
-    padding: 15px 0;
-    background: rgba(255, 255, 255, 0.7);
-    backdrop-filter: blur(10px);
-    width: 100vw;
-    margin-left: -50vw;
-    left: 50%;
-    right: 50%;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    /* Reset sticky styles as wrapper handles them */
+    width: 100%;
+    max-width: 1200px;
+    /* Match container max-width */
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-body.dark-mode .menu-tabs {
-    background: rgba(15, 15, 15, 0.7);
-    border-bottom-color: rgba(255, 255, 255, 0.05);
+/* Juice & Extras Section */
+.extras-section {
+    margin-top: 40px;
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: var(--radius);
+}
+
+.extras-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.extra-item {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 10px;
 }
 
 .tab-btn {
