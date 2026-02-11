@@ -1208,7 +1208,12 @@ body.dark-mode .menu-tabs {
     gap: 30px;
     margin-top: 15px;
     flex-wrap: wrap;
-    justify-content: flex-start;
+    align-items: center;
+}
+
+.dual-price .price:not(:last-child) {
+    margin-right: 20px;
+    /* Fallback for gap */
 }
 
 .dual-price .price {
