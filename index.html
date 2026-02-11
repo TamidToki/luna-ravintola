@@ -8,6 +8,7 @@
         content="Luna Ravintola - The Best Pizza in Turku. Huge portions, fresh ingredients, unforgettable taste.">
     <title>Luna Ravintola | Turku</title>
     <link rel="canonical" href="https://luna-ravintola.vercel.app/">
+    <link rel="icon" type="image/png" href="assets/logo.png">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
@@ -121,7 +122,7 @@
     <section id="home" class="hero animate-on-scroll">
         <div class="hero-slideshow">
             <img src="assets/pizza_prosciutto.png" alt="Prosciutto Pizza" class="slide active">
-            <img src="assets/interior.jpg" alt="Luna Ravintola Interior" class="slide">
+            <img src="assets/interior.jpg" alt="Luna Ravintola Interior" class="slide" loading="lazy">
             <img src="assets/pizza_mexicana.jpg" alt="Mexicana Pizza" class="slide">
             <img src="assets/pizza_bbq.jpg" alt="BBQ Pizza" class="slide">
             <img src="assets/pizza_ham_arugula.jpg" alt="Ham Arugula Pizza" class="slide">
@@ -1149,12 +1150,19 @@
                 <a href="tel:0413154126"><i class="fas fa-phone"></i> 041 3154126</a>
                 <a href="https://maps.google.com/?q=Lauklähteenkatu+10,+Turku" target="_blank"><i
                         class="fas fa-map-marker-alt"></i> Lauklähteenkatu 10, Turku</a>
+                <a href="https://www.facebook.com/profile.php?id=61585046934347" target="_blank"><i
+                        class="fab fa-facebook"></i> Facebook</a>
             </div>
             <p class="copyright">&copy; 2026 Luna Ravintola</p>
         </div>
     </footer>
 
     <script src="script.js"></script>
+
+    <!-- Mobile Sticky Call Button -->
+    <a href="tel:0413154126" class="mobile-sticky-call">
+        <i class="fas fa-phone-alt"></i> <span data-en="Call Now" data-fi="Soita Nyt">Call Now</span>
+    </a>
 </body>
 
 </html>

@@ -1595,6 +1595,23 @@ footer {
 }
 
 @media (max-width: 768px) {
+    .menu-tabs-wrapper {
+        top: 70px;
+    }
+
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    .mobile-sticky-call {
+        display: flex;
+    }
+
+    footer {
+        padding-bottom: 80px;
+        /* Space for sticky button */
+    }
+
     .desktop-nav {
         display: none;
     }
