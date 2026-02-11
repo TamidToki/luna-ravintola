@@ -1186,6 +1186,35 @@ body.dark-mode .menu-list-item.highlight {
     margin: 0;
 }
 
+.dual-price {
+    display: flex;
+    gap: 12px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.dual-price .price {
+    background: rgba(255, 112, 67, 0.08);
+    padding: 4px 10px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.dual-price .family-price {
+    background: rgba(230, 74, 25, 0.08);
+    color: var(--primary-dark);
+}
+
+body.dark-mode .dual-price .price {
+    background: rgba(255, 112, 67, 0.15);
+}
+
+body.dark-mode .dual-price .family-price {
+    background: rgba(230, 74, 25, 0.15);
+}
+
 /* ===== REVIEWS ===== */
 .reviews-header {
     text-align: center;
