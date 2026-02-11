@@ -511,12 +511,13 @@ img {
     font-weight: 700;
     line-height: 0.9;
     color: var(--nav-text);
+    letter-spacing: 5px;
 }
 
 .logo-sub {
     font-size: 0.6rem;
     text-transform: uppercase;
-    letter-spacing: 3px;
+    letter-spacing: 5px;
     color: var(--primary);
     margin-top: -3px;
     display: block;
@@ -1082,8 +1083,24 @@ body.dark-mode .menu-list-item.highlight {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 8px;
+    gap: 10px;
     margin-bottom: 30px;
+    position: sticky;
+    top: 85px;
+    z-index: 100;
+    padding: 15px 0;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    width: 100vw;
+    margin-left: -50vw;
+    left: 50%;
+    right: 50%;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+body.dark-mode .menu-tabs {
+    background: rgba(15, 15, 15, 0.9);
+    border-bottom-color: rgba(255, 255, 255, 0.05);
 }
 
 .tab-btn {
@@ -1188,9 +1205,10 @@ body.dark-mode .menu-list-item.highlight {
 
 .dual-price {
     display: flex;
-    gap: 12px;
-    margin-top: 10px;
+    gap: 30px;
+    margin-top: 15px;
     flex-wrap: wrap;
+    justify-content: flex-start;
 }
 
 .dual-price .price {
