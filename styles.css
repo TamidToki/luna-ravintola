@@ -511,15 +511,13 @@ img {
     font-weight: 700;
     line-height: 0.9;
     color: var(--nav-text);
-    letter-spacing: 5px;
 }
 
 .logo-sub {
     font-size: 0.6rem;
     text-transform: uppercase;
-    letter-spacing: 5px;
     color: var(--primary);
-    margin-top: -3px;
+    margin-top: 2px;
     display: block;
 }
 
@@ -1089,7 +1087,7 @@ body.dark-mode .menu-list-item.highlight {
     top: 85px;
     z-index: 100;
     padding: 15px 0;
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.7);
     backdrop-filter: blur(10px);
     width: 100vw;
     margin-left: -50vw;
@@ -1099,7 +1097,7 @@ body.dark-mode .menu-list-item.highlight {
 }
 
 body.dark-mode .menu-tabs {
-    background: rgba(15, 15, 15, 0.9);
+    background: rgba(15, 15, 15, 0.7);
     border-bottom-color: rgba(255, 255, 255, 0.05);
 }
 
