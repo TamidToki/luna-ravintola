@@ -1123,11 +1123,63 @@ body.dark-mode .menu-tabs-wrapper {
     gap: 20px;
 }
 
-.extra-item {
+.extra-card {
+    background: var(--bg-color);
+    padding: 20px;
+    border-radius: var(--radius);
+    border: 1px solid var(--border-color);
     display: flex;
-    justify-content: space-between;
-    border-bottom: 1px solid var(--border-color);
-    padding-bottom: 10px;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.extra-card h4 {
+    font-family: var(--font-heading);
+    color: var(--primary);
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.extra-prices {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    background: var(--card-bg);
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 5px;
+}
+
+.price-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.price-row span:first-child {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.price-tag {
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 1.2rem;
+    background: rgba(255, 107, 107, 0.1);
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+.extra-list {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    text-align: center;
 }
 
 .tab-btn {
