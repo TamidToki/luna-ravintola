@@ -115,9 +115,11 @@ const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add('is-visible');
+            // Stop observing once visible to save performance
+            observer.unobserve(entry.target);
         }
     });
-}, { threshold: 0.1 });
+}, { threshold: 0, rootMargin: "0px 0px -50px 0px" });
 
 animatedElements.forEach(el => observer.observe(el));
 

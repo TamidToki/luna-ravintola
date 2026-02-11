@@ -1600,6 +1600,12 @@ footer {
         top: 70px;
     }
 
+    /* Force visibility on mobile to prevent blank screens if JS fails */
+    .animate-on-scroll {
+        opacity: 1 !important;
+        transform: none !important;
+    }
+
     .hero h1 {
         font-size: 3rem;
     }
