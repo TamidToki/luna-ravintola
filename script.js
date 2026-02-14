@@ -104,7 +104,19 @@ tabBtns.forEach(btn => {
 
         btn.classList.add('active');
         const categoryId = btn.dataset.category;
-        document.getElementById(categoryId).classList.add('active');
+        const targetSection = document.getElementById(categoryId);
+        targetSection.classList.add('active');
+
+        // Scroll to the top of the menu section with offset
+        const menuSection = document.getElementById('menu');
+        const headerOffset = 140; // Approx height of navbar + tabs
+        const elementPosition = menuSection.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+        window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth"
+        });
     });
 });
 
