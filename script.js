@@ -109,8 +109,12 @@ tabBtns.forEach(btn => {
 
         // Scroll to the top of the menu section so the user sees the start of the new category
         const menuSection = document.getElementById('menu');
-        const headerOffset = 100; // Adjusted for sticky navbar + breathing room
-        const offsetPosition = menuSection.offsetTop - headerOffset;
+        // We use getBoundingClientRect() to find the current position relative to the viewport
+        // and add window.scrollY to get the absolute document position.
+        // Then subtract the header height (approx 80px) + some buffer (20px)
+        const headerOffset = 100;
+        const elementPosition = menuSection.getBoundingClientRect().top + window.scrollY;
+        const offsetPosition = elementPosition - headerOffset;
 
         window.scrollTo({
             top: offsetPosition,
