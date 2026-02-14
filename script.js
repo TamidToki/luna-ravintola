@@ -107,18 +107,17 @@ tabBtns.forEach(btn => {
         const targetSection = document.getElementById(categoryId);
         targetSection.classList.add('active');
 
-        // Scroll to the top of the menu section so the user sees the start of the new category
-        const menuSection = document.getElementById('menu');
-        // We use getBoundingClientRect() to find the current position relative to the viewport
-        // and add window.scrollY to get the absolute document position.
-        // Then subtract the header height (approx 80px) + some buffer (20px)
-        const headerOffset = 100;
-        const elementPosition = menuSection.getBoundingClientRect().top + window.scrollY;
+        // Scroll to the top of the menu tabs specifically so the navigation is visible
+        const tabsWrapper = document.querySelector('.menu-tabs-wrapper');
+        // We use getBoundingClientRect() relative to viewport + window.scrollY for absolute page position
+        // subtract header (approx 80px) and a small buffer
+        const headerOffset = 90;
+        const elementPosition = tabsWrapper.getBoundingClientRect().top + window.scrollY;
         const offsetPosition = elementPosition - headerOffset;
 
         window.scrollTo({
             top: offsetPosition,
-            behavior: "smooth"
+            behavior: "auto" // Instant scroll prevents glitches during layout changes
         });
     });
 });
