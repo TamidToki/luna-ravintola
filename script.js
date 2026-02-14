@@ -23,10 +23,16 @@ themeToggle.addEventListener('click', () => {
 // ===== LANGUAGE TOGGLE (EN/FI) =====
 const langToggle = document.getElementById('lang-toggle');
 const langText = document.getElementById('lang-text');
+
+// Default to English if no preference is saved. 
+// We explicitly want English first, so we do NOT use navigator.language here.
 let currentLang = localStorage.getItem('lang') || 'en';
 
-// Apply saved language on load
-if (currentLang === 'fi') {
+// Ensure we start with English text if that's the currentLang
+if (currentLang === 'en') {
+    applyLanguage('en');
+    langText.textContent = 'EN';
+} else {
     applyLanguage('fi');
     langText.textContent = 'FI';
 }
