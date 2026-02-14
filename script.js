@@ -103,22 +103,22 @@ tabBtns.forEach(btn => {
         categories.forEach(c => c.classList.remove('active'));
 
         btn.classList.add('active');
-        const categoryId = btn.dataset.category;
-        const targetSection = document.getElementById(categoryId);
-        targetSection.classList.add('active');
+        const categoryId = btn.dataset.category; // Get the category ID from the button's data attribute
+        const content = document.getElementById(categoryId); // Find the corresponding category content
+        if (content) {
+            content.classList.add('active');
 
-        // Scroll to the top of the menu tabs specifically so the navigation is visible
-        const tabsWrapper = document.querySelector('.menu-tabs-wrapper');
-        // We use getBoundingClientRect() relative to viewport + window.scrollY for absolute page position
-        // subtract header (approx 80px) and a small buffer
-        const headerOffset = 90;
-        const elementPosition = tabsWrapper.getBoundingClientRect().top + window.scrollY;
-        const offsetPosition = elementPosition - headerOffset;
-
-        window.scrollTo({
-            top: offsetPosition,
-            behavior: "auto" // Instant scroll prevents glitches during layout changes
-        });
+            // Wait slightly for DOM update then scroll
+            setTimeout(() => {
+                const menuSection = document.getElementById('menu'); // Assuming 'menu' is the ID of the main menu section
+                if (menuSection) {
+                    menuSection.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            }, 10);
+        }
     });
 });
 

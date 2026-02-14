@@ -337,6 +337,8 @@ body:not(.dark-mode) .navbar.scrolled .lang-btn {
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 140px;
+    /* Header + Tabs height to prevent overlap */
 }
 
 body {
@@ -1769,6 +1771,51 @@ footer {
 #wings .menu-card img {
     height: 180px;
     /* Slightly smaller image to give room for text */
+}
+
+/* Side Dish Info List Styling (Static) */
+.side-dish-info {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px dashed rgba(0, 0, 0, 0.1);
+}
+
+body.dark-mode .side-dish-info {
+    border-top-color: rgba(255, 255, 255, 0.1);
+}
+
+.side-dish-info p {
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+    color: var(--primary);
+}
+
+.side-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.side-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 4px 0;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+body.dark-mode .side-list li {
+    border-bottom-color: rgba(255, 255, 255, 0.03);
+}
+
+.side-list li:last-child {
+    border-bottom: none;
+}
+
+.price-diff {
+    font-weight: 600;
+    color: var(--text-primary);
 }
 
 /* Side Dish Selector Styling */
