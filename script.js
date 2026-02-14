@@ -107,10 +107,10 @@ tabBtns.forEach(btn => {
         const targetSection = document.getElementById(categoryId);
         targetSection.classList.add('active');
 
-        // Scroll to the top of the menu section with offset
-        const menuSection = document.getElementById('menu');
-        const headerOffset = 140; // Approx height of navbar + tabs
-        const elementPosition = menuSection.getBoundingClientRect().top;
+        // Scroll to the top of the menu tabs so the user sees the start of the new category
+        const tabsWrapper = document.querySelector('.menu-tabs-wrapper');
+        const headerOffset = 80; // Adjusted for sticky navbar height
+        const elementPosition = tabsWrapper.getBoundingClientRect().top;
         const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
         window.scrollTo({
