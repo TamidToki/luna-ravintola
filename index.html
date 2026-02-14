@@ -348,7 +348,7 @@
                         <img src="assets/four_seasons.avif" alt="Quatro Stagione" loading="lazy">
                         <div class="menu-card-content">
                             <div class="menu-card-header">
-                                <h3 >Quatro Stagione</h3>
+                                <h3 data-en="Quatro Stagione" data-fi="Quatro Stagione">Quatro Stagione</h3>
                             </div>
                             <p data-en="Ham, tuna, salami, shrimp" data-fi="Kinkku, tonnikala, salami, katkarapu">
                                 Kinkku, tonnikala, salami, katkarapu</p>
@@ -571,18 +571,59 @@
                     <p><strong><span data-en="SAUCES: Mild, Medium, Strong"
                                 data-fi="KASTIKKEET: Mieto, Keskivahva, Vahva">KASTIKKEET: Mieto, Keskivahva,
                                 Vahva</span></strong></p>
-                    <p><strong><span
-                                data-en="Choose a side dish: French Fries +1.00€, Potato Wedges +2.00€, Cream Potatoes +3.00€, Rice +2.60€, Iskender +2.00€, Salad +2.60€, Blue Cheese/Feta Fries +3.00€"
-                                data-fi="Valitse lisuke: Ranskalaiset +1,00€, Lohkoperunat +2,00€, Valkosipuliperunat +3,00€, Riisi +2,60€, Iskender +2,00€, Salaatti +2,60€, Aura/Feta Ranskalaiset +3,00€">Valitse
-                                lisuke: Ranskalaiset +1,00€, Lohkoperunat +2,00€, Valkosipuliperunat +3,00€, Riisi
-                                +2,60€, Iskender +2,00€, Salaatti +2,60€, Aura/Feta Ranskalaiset +3,00€</span></strong>
-                    </p>
+                    <div class="side-dish-selector">
+                        <p><strong><span data-en="Choose a side dish" data-fi="Valitse lisuke">Valitse
+                                    lisuke</span></strong></p>
+                        <div class="side-options">
+                            <label class="side-option">
+                                <input type="radio" name="side-kebab" checked disabled>
+                                <span data-en="Pita bread" data-fi="Pitaleipä">Pitaleipä</span>
+                                <span class="side-price"></span>
+                            </label>
+                            <label class="side-option">
+                                <input type="radio" name="side-kebab" disabled>
+                                <span data-en="French Fries" data-fi="Ranskalaiset">Ranskalaiset</span>
+                                <span class="side-price">+1.00€</span>
+                            </label>
+                            <label class="side-option">
+                                <input type="radio" name="side-kebab" disabled>
+                                <span data-en="Potato Wedges" data-fi="Lohkoperunat">Lohkoperunat</span>
+                                <span class="side-price">+2.00€</span>
+                            </label>
+                            <label class="side-option">
+                                <input type="radio" name="side-kebab" disabled>
+                                <span data-en="Cream Potatoes" data-fi="Valkosipuliperunat">Valkosipuliperunat</span>
+                                <span class="side-price">+3.00€</span>
+                            </label>
+                            <label class="side-option">
+                                <input type="radio" name="side-kebab" disabled>
+                                <span data-en="Rice" data-fi="Riisi">Riisi</span>
+                                <span class="side-price">+2.60€</span>
+                            </label>
+                            <label class="side-option">
+                                <input type="radio" name="side-kebab" disabled>
+                                <span data-en="Iskender" data-fi="Iskender">Iskender</span>
+                                <span class="side-price">+2.00€</span>
+                            </label>
+                            <label class="side-option">
+                                <input type="radio" name="side-kebab" disabled>
+                                <span data-en="Salad" data-fi="Salaatti">Salaatti</span>
+                                <span class="side-price">+2.60€</span>
+                            </label>
+                            <label class="side-option">
+                                <input type="radio" name="side-kebab" disabled>
+                                <span data-en="Blue Cheese/Feta Fries" data-fi="Aura/Feta Ranskalaiset">Aura/Feta
+                                    Ranskalaiset</span>
+                                <span class="side-price">+3.00€</span>
+                            </label>
+                        </div>
+                    </div>
                 </div>
 
                 <h3 class="category-subtitle" data-en="KEBABS" data-fi="KEBABIT">KEBABIT</h3>
                 <div class="menu-grid">
                     <div class="menu-card">
-                        <img src="assets/menu_item_20.jpeg" alt="Pitakebab" loading="lazy">
+                        <img src="assets/kebab_plate.png" alt="Pitakebab" loading="lazy">
                         <div class="menu-card-content">
                             <div class="menu-card-header">
                                 <h3 data-en="Pita Kebab" data-fi="Pitakebab">Pitakebab</h3><span
@@ -664,12 +705,53 @@
                     <p><strong><span data-en="SAUCES: Mild, Medium, Strong"
                                 data-fi="KASTIKKEET: Mieto, Keskivahva, Vahva">KASTIKKEET: Mieto, Keskivahva,
                                 Vahva</span></strong></p>
-                    <p><strong><span
-                                data-en="Choose a side dish: French Fries +1.00€, Potato Wedges +2.00€, Cream Potatoes +3.00€, Rice +2.60€, Iskender +2.00€, Salad +2.60€, Blue Cheese/Feta Fries +3.00€"
-                                data-fi="Valitse lisuke: Ranskalaiset +1,00€, Lohkoperunat +2,00€, Valkosipuliperunat +3,00€, Riisi +2,60€, Iskender +2,00€, Salaatti +2,60€, Aura/Feta Ranskalaiset +3,00€">Valitse
-                                lisuke: Ranskalaiset +1,00€, Lohkoperunat +2,00€, Valkosipuliperunat +3,00€, Riisi
-                                +2,60€, Iskender +2,00€, Salaatti +2,60€, Aura/Feta Ranskalaiset +3,00€</span></strong>
-                    </p>
+                    <div class="side-dish-selector">
+                        <p><strong><span data-en="Choose a side dish" data-fi="Valitse lisuke">Valitse
+                                    lisuke</span></strong></p>
+                        <div class="side-options">
+                            <label class="side-option">
+                                <input type="radio" name="side-roll" checked disabled>
+                                <span data-en="Standard" data-fi="Normaali">Normaali</span>
+                                <span class="side-price"></span>
+                            </label>
+                            <label class="side-option">
+                                <input type="radio" name="side-roll" disabled>
+                                <span data-en="French Fries" data-fi="Ranskalaiset">Ranskalaiset</span>
+                                <span class="side-price">+1.00€</span>
+                            </label>
+                            <label class="side-option">
+                                <input type="radio" name="side-roll" disabled>
+                                <span data-en="Potato Wedges" data-fi="Lohkoperunat">Lohkoperunat</span>
+                                <span class="side-price">+2.00€</span>
+                            </label>
+                            <label class="side-option">
+                                <input type="radio" name="side-roll" disabled>
+                                <span data-en="Cream Potatoes" data-fi="Valkosipuliperunat">Valkosipuliperunat</span>
+                                <span class="side-price">+3.00€</span>
+                            </label>
+                            <label class="side-option">
+                                <input type="radio" name="side-roll" disabled>
+                                <span data-en="Rice" data-fi="Riisi">Riisi</span>
+                                <span class="side-price">+2.60€</span>
+                            </label>
+                            <label class="side-option">
+                                <input type="radio" name="side-roll" disabled>
+                                <span data-en="Iskender" data-fi="Iskender">Iskender</span>
+                                <span class="side-price">+2.00€</span>
+                            </label>
+                            <label class="side-option">
+                                <input type="radio" name="side-roll" disabled>
+                                <span data-en="Salad" data-fi="Salaatti">Salaatti</span>
+                                <span class="side-price">+2.60€</span>
+                            </label>
+                            <label class="side-option">
+                                <input type="radio" name="side-roll" disabled>
+                                <span data-en="Blue Cheese/Feta Fries" data-fi="Aura/Feta Ranskalaiset">Aura/Feta
+                                    Ranskalaiset</span>
+                                <span class="side-price">+3.00€</span>
+                            </label>
+                        </div>
+                    </div>
                 </div>
                 <h3 class="category-subtitle" data-en="ROLL KEBABS" data-fi="RULLAKEBABIT">RULLAKEBABIT</h3>
                 <div class="menu-grid">
@@ -727,6 +809,42 @@
                     <p><strong><span data-en="SAUCES: Curry, Garlic, Taco, BBQ, Bearnaise"
                                 data-fi="KASTIKKEET: Curry, Valkosipuli, Taco, BBQ, Bearnaise">KASTIKKEET: Curry,
                                 Valkosipuli, Taco, BBQ, Bearnaise</span></strong></p>
+                    <div class="side-dish-selector">
+                        <p><strong><span data-en="Choose a side dish" data-fi="Valitse lisuke">Valitse
+                                    lisuke</span></strong></p>
+                        <div class="side-options">
+                            <label class="side-option">
+                                <input type="radio" name="side-chicken" checked disabled>
+                                <span data-en="French Fries" data-fi="Ranskalaiset">Ranskalaiset</span>
+                                <span class="side-price"></span>
+                            </label>
+                            <label class="side-option">
+                                <input type="radio" name="side-chicken" disabled>
+                                <span data-en="Potato Wedges" data-fi="Lohkoperunat">Lohkoperunat</span>
+                                <span class="side-price">+1.00€</span>
+                            </label>
+                            <label class="side-option">
+                                <input type="radio" name="side-chicken" disabled>
+                                <span data-en="Cream Potatoes" data-fi="Valkosipuliperunat">Valkosipuliperunat</span>
+                                <span class="side-price">+2.00€</span>
+                            </label>
+                            <label class="side-option">
+                                <input type="radio" name="side-chicken" disabled>
+                                <span data-en="Rice" data-fi="Riisi">Riisi</span>
+                                <span class="side-price">+1.60€</span>
+                            </label>
+                            <label class="side-option">
+                                <input type="radio" name="side-chicken" disabled>
+                                <span data-en="Waffle Fries" data-fi="Ristikkoperunat">Ristikkoperunat</span>
+                                <span class="side-price">+1.00€</span>
+                            </label>
+                            <label class="side-option">
+                                <input type="radio" name="side-chicken" disabled>
+                                <span data-en="Salad" data-fi="Salaatti">Salaatti</span>
+                                <span class="side-price">+1.60€</span>
+                            </label>
+                        </div>
+                    </div>
                 </div>
                 <h3 class="category-subtitle" data-en="CHICKEN DISHES" data-fi="KANA-ANNOKSET">KANA-ANNOKSET</h3>
                 <div class="menu-grid">
@@ -793,6 +911,37 @@
                     <p><strong><span data-en="SAUCES: Mild, Medium, Strong"
                                 data-fi="KASTIKKEET: Mieto, Keskivahva, Vahva">KASTIKKEET: Mieto, Keskivahva,
                                 Vahva</span></strong></p>
+                    <div class="side-dish-selector">
+                        <p><strong><span data-en="Choose a side dish" data-fi="Valitse lisuke">Valitse
+                                    lisuke</span></strong></p>
+                        <div class="side-options">
+                            <label class="side-option">
+                                <input type="radio" name="side-falafel" checked disabled>
+                                <span data-en="French Fries" data-fi="Ranskalaiset">Ranskalaiset</span>
+                                <span class="side-price"></span>
+                            </label>
+                            <label class="side-option">
+                                <input type="radio" name="side-falafel" disabled>
+                                <span data-en="Potato Wedges" data-fi="Lohkoperunat">Lohkoperunat</span>
+                                <span class="side-price">+1.00€</span>
+                            </label>
+                            <label class="side-option">
+                                <input type="radio" name="side-falafel" disabled>
+                                <span data-en="Rice" data-fi="Riisi">Riisi</span>
+                                <span class="side-price">+1.60€</span>
+                            </label>
+                            <label class="side-option">
+                                <input type="radio" name="side-falafel" disabled>
+                                <span data-en="Pita bread" data-fi="Pitaleipä">Pitaleipä</span>
+                                <span class="side-price">-1.00€</span>
+                            </label>
+                            <label class="side-option">
+                                <input type="radio" name="side-falafel" disabled>
+                                <span data-en="Roll" data-fi="Rulla">Rulla</span>
+                                <span class="side-price">+1.00€</span>
+                            </label>
+                        </div>
+                    </div>
                 </div>
                 <h3 class="category-subtitle" data-en="FALAFELS" data-fi="FALAFELIT">FALAFELIT</h3>
                 <div class="menu-grid">

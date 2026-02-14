@@ -1770,3 +1770,58 @@ footer {
     height: 180px;
     /* Slightly smaller image to give room for text */
 }
+
+/* Side Dish Selector Styling */
+.side-dish-selector {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    padding: 15px;
+    margin-top: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.side-dish-selector p {
+    margin-bottom: 15px;
+    color: var(--accent-color);
+    font-weight: 600;
+}
+
+.side-options {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.side-option {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.03);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.side-option:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+    /* Slightly lighter on hover */
+}
+
+.side-option input[type="radio"] {
+    margin-right: 12px;
+    accent-color: var(--accent-color);
+    transform: scale(1.2);
+}
+
+.side-option span {
+    flex-grow: 1;
+    color: var(--text-color);
+    font-size: 0.95rem;
+}
+
+.side-option .side-price {
+    flex-grow: 0;
+    color: var(--accent-color);
+    font-weight: 600;
+}
