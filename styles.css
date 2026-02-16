@@ -366,24 +366,25 @@ img {
 .logo {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 0;
 }
 
-.logo-icon {
-    width: 40px;
-    height: 40px;
-    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
-    font-size: 1.1rem;
+.logo-mark {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    border-radius: 8px;
+    flex-shrink: 0;
     transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-.logo:hover .logo-icon,
-.footer-logo:hover .logo-icon {
+.logo-wordmark {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo:hover .logo-mark,
+.footer-logo:hover .logo-mark {
     transform: rotate(-15deg) scale(1.1);
 }
 
@@ -1488,6 +1489,11 @@ footer {
     display: flex;
     align-items: center;
     gap: 8px;
+}
+
+.footer-logo .logo-mark {
+    width: 54px;
+    height: 54px;
 }
 
 .footer-links {
