@@ -372,13 +372,13 @@ img {
 }
 
 .logo-mark {
-    width: 120px;
-    height: 120px;
+    width: 132px;
+    height: 132px;
     object-fit: contain;
     border-radius: 8px;
     flex-shrink: 0;
-    margin-top: -30px;
-    margin-bottom: -30px;
+    margin-top: -36px;
+    margin-bottom: -36px;
     transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
@@ -1496,8 +1496,8 @@ footer {
 }
 
 .footer-logo .logo-mark {
-    width: 96px;
-    height: 96px;
+    width: 124px;
+    height: 124px;
     margin-top: 0;
     margin-bottom: 0;
 }
@@ -1531,15 +1531,15 @@ footer {
 @media (max-width: 900px) {
 
     .logo-mark {
-        width: 96px;
-        height: 96px;
-        margin-top: -22px;
-        margin-bottom: -22px;
+        width: 108px;
+        height: 108px;
+        margin-top: -28px;
+        margin-bottom: -28px;
     }
 
     .footer-logo .logo-mark {
-        width: 82px;
-        height: 82px;
+        width: 102px;
+        height: 102px;
         margin-top: 0;
         margin-bottom: 0;
     }
