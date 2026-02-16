@@ -24,25 +24,53 @@ themeToggle.addEventListener('click', () => {
 const langToggle = document.getElementById('lang-toggle');
 const langText = document.getElementById('lang-text');
 
-// Default to English if no preference is saved. 
-// We explicitly want English first, so we do NOT use navigator.language here.
-let currentLang = localStorage.getItem('lang') || 'en';
-
-// Ensure we start with English text if that's the currentLang
-if (currentLang === 'en') {
-    applyLanguage('en');
-    langText.textContent = 'EN';
-} else {
-    applyLanguage('fi');
-    langText.textContent = 'FI';
-}
+// Always start in English on each page load.
+let currentLang = 'en';
+applyLanguage('en');
+langText.textContent = 'EN';
 
 langToggle.addEventListener('click', () => {
     currentLang = currentLang === 'en' ? 'fi' : 'en';
-    localStorage.setItem('lang', currentLang);
     applyLanguage(currentLang);
     langText.textContent = currentLang.toUpperCase();
 });
+
+function randomInRange(min, max) {
+    return Math.random() * (max - min) + min;
+}
+
+function initGlobalParticles() {
+    const container = document.querySelector('.global-particles');
+    if (!container) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    const icons = ['fa-pizza-slice', 'fa-burger', 'fa-bottle-water', 'fa-pepper-hot', 'fa-hotdog', 'fa-star'];
+    const count = window.matchMedia('(max-width: 900px)').matches ? 26 : 48;
+    container.innerHTML = '';
+
+    for (let i = 0; i < count; i++) {
+        const icon = document.createElement('i');
+        const iconClass = icons[Math.floor(Math.random() * icons.length)];
+        icon.className = `fas ${iconClass} gp`;
+        icon.style.setProperty('--x', `${randomInRange(2, 96).toFixed(1)}%`);
+        icon.style.setProperty('--y', `${randomInRange(2, 96).toFixed(1)}%`);
+        icon.style.setProperty('--o', `${randomInRange(0.18, 0.42).toFixed(2)}`);
+        icon.style.setProperty('--s', `${randomInRange(0.95, 2.05).toFixed(2)}rem`);
+        icon.style.setProperty('--d', `${randomInRange(12, 34).toFixed(1)}s`);
+        icon.style.setProperty('--delay', `${randomInRange(-28, 0).toFixed(1)}s`);
+        icon.style.setProperty('--dx1', `${randomInRange(-50, 50).toFixed(1)}px`);
+        icon.style.setProperty('--dy1', `${randomInRange(-44, -8).toFixed(1)}px`);
+        icon.style.setProperty('--dx2', `${randomInRange(-58, 58).toFixed(1)}px`);
+        icon.style.setProperty('--dy2', `${randomInRange(-70, -18).toFixed(1)}px`);
+        icon.style.setProperty('--r1', `${randomInRange(-20, 20).toFixed(1)}deg`);
+        icon.style.setProperty('--r2', `${randomInRange(-20, 20).toFixed(1)}deg`);
+        icon.style.setProperty('--sc1', `${randomInRange(0.88, 1.18).toFixed(2)}`);
+        icon.style.setProperty('--sc2', `${randomInRange(0.82, 1.12).toFixed(2)}`);
+        container.appendChild(icon);
+    }
+}
+
+initGlobalParticles();
 
 function applyLanguage(lang) {
     const elements = document.querySelectorAll('[data-en][data-fi]');
@@ -103,27 +131,37 @@ mobileLinks.forEach(link => {
 const tabBtns = document.querySelectorAll('.tab-btn');
 const categories = document.querySelectorAll('.menu-category');
 
+function scrollToActiveCategoryTop(categoryElement) {
+    const navbar = document.querySelector('.navbar');
+    const tabsWrapper = document.querySelector('.menu-tabs-wrapper');
+    const navbarHeight = navbar ? navbar.offsetHeight : 0;
+    const tabsHeight = tabsWrapper ? tabsWrapper.offsetHeight : 0;
+    const extraSpacing = 42;
+    const targetTop = window.scrollY + categoryElement.getBoundingClientRect().top - (navbarHeight + tabsHeight + extraSpacing);
+
+    window.scrollTo({
+        top: Math.max(targetTop, 0),
+        behavior: 'smooth'
+    });
+}
+
 tabBtns.forEach(btn => {
     btn.addEventListener('click', () => {
         tabBtns.forEach(b => b.classList.remove('active'));
         categories.forEach(c => c.classList.remove('active'));
 
         btn.classList.add('active');
-        const categoryId = btn.dataset.category; // Get the category ID from the button's data attribute
-        const content = document.getElementById(categoryId); // Find the corresponding category content
+        const categoryId = btn.dataset.category;
+        const content = document.getElementById(categoryId);
         if (content) {
             content.classList.add('active');
 
-            // Wait slightly for DOM update then scroll
-            setTimeout(() => {
-                const menuSection = document.getElementById('menu'); // Assuming 'menu' is the ID of the main menu section
-                if (menuSection) {
-                    menuSection.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            }, 10);
+            // Wait for the active class to apply before calculating offsets.
+            requestAnimationFrame(() => {
+                requestAnimationFrame(() => {
+                    scrollToActiveCategoryTop(content);
+                });
+            });
         }
     });
 });
