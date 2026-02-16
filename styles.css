@@ -370,8 +370,8 @@ img {
 }
 
 .logo-mark {
-    width: 60px;
-    height: 60px;
+    width: 88px;
+    height: 88px;
     object-fit: contain;
     border-radius: 8px;
     flex-shrink: 0;
@@ -1492,8 +1492,8 @@ footer {
 }
 
 .footer-logo .logo-mark {
-    width: 54px;
-    height: 54px;
+    width: 80px;
+    height: 80px;
 }
 
 .footer-links {
@@ -1523,6 +1523,16 @@ footer {
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 900px) {
+
+    .logo-mark {
+        width: 72px;
+        height: 72px;
+    }
+
+    .footer-logo .logo-mark {
+        width: 66px;
+        height: 66px;
+    }
 
     .story-container,
     .location-grid {
