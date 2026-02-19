@@ -15,11 +15,11 @@
 }
 
 body.dark-mode {
-    --bg-color: #050608;
-    --card-bg: #0d1117;
-    --text-primary: #f6f8fb;
-    --text-secondary: #aab2bf;
-    --nav-bg: rgba(5, 6, 8, 0.92);
+    --bg-color: #12161f;
+    --card-bg: #1a2230;
+    --text-primary: #f4f7fb;
+    --text-secondary: #b7c0cf;
+    --nav-bg: rgba(18, 22, 31, 0.92);
     --nav-text: #f8fafc;
 }
 
@@ -361,13 +361,13 @@ img {
 }
 
 body.dark-mode .navbar {
-    background: rgba(5, 6, 8, 0.86);
+    background: rgba(18, 22, 31, 0.86);
     border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 body.dark-mode .navbar.scrolled {
-    background: rgba(3, 4, 6, 0.96);
-    box-shadow: 0 10px 36px rgba(0, 0, 0, 0.55);
+    background: rgba(16, 20, 28, 0.96);
+    box-shadow: 0 10px 36px rgba(0, 0, 0, 0.35);
 }
 
 .nav-container {
@@ -566,7 +566,7 @@ body.dark-mode .navbar.scrolled {
 }
 
 body.dark-mode .hero {
-    background: #040506;
+    background: #171d28;
 }
 
 .hero-slideshow {
@@ -597,7 +597,7 @@ body.dark-mode .hero {
 }
 
 body.dark-mode .hero-overlay {
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.82));
+    background: linear-gradient(to bottom, rgba(8, 11, 18, 0.5), rgba(10, 13, 20, 0.74));
 }
 
 /* Hero Particles */
@@ -675,6 +675,8 @@ body.dark-mode .hero-overlay {
 .rating-badge {
     display: inline-flex;
     align-items: center;
+    flex-wrap: nowrap;
+    white-space: nowrap;
     gap: 8px;
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
@@ -1001,9 +1003,9 @@ body.dark-mode .menu-list-item.highlight {
 }
 
 body.dark-mode .menu-tabs-wrapper {
-    background: rgba(7, 9, 12, 0.7);
+    background: rgba(20, 26, 37, 0.72);
     border-color: rgba(255, 255, 255, 0.18);
-    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.24), inset 0 1px 0 rgba(255, 255, 255, 0.08);
 }
 
 .menu-tabs {
@@ -1502,7 +1504,7 @@ footer {
 }
 
 body.dark-mode footer {
-    background: #040506;
+    background: #141b27;
 }
 
 .footer-content {
@@ -1590,41 +1592,46 @@ body.dark-mode footer {
     }
 
     .nav-container {
-        flex-wrap: wrap;
-        row-gap: 6px;
+        display: grid;
+        grid-template-columns: auto 1fr auto;
         align-items: center;
+        gap: 8px;
+        min-height: 52px;
     }
 
     .logo-mark {
-        width: 106px;
-        height: 106px;
-        margin-top: -28px;
-        margin-bottom: -28px;
+        width: 96px;
+        height: 96px;
+        margin-top: -23px;
+        margin-bottom: -23px;
     }
 
     .nav-controls {
-        gap: 6px;
+        gap: 4px;
+        flex-shrink: 0;
     }
 
     .icon-btn {
-        padding: 7px;
+        padding: 6px;
+        font-size: 0.9rem;
     }
 
     .lang-btn {
-        font-size: 0.72rem;
-        padding: 5px 9px;
+        font-size: 0.68rem;
+        padding: 4px 8px;
+        gap: 4px;
     }
 
     .desktop-nav {
         display: flex;
-        order: 3;
-        flex: 1 0 100%;
+        flex: 1 1 auto;
+        min-width: 0;
         justify-content: center;
-        gap: 14px;
+        gap: 10px;
         overflow-x: auto;
         white-space: nowrap;
         scrollbar-width: none;
-        padding-top: 2px;
+        padding-top: 0;
     }
 
     .desktop-nav::-webkit-scrollbar {
@@ -1632,9 +1639,9 @@ body.dark-mode footer {
     }
 
     .desktop-nav a {
-        font-size: 0.72rem;
-        letter-spacing: 0.8px;
-        padding: 2px 0;
+        font-size: 0.64rem;
+        letter-spacing: 0.55px;
+        padding: 1px 0;
         white-space: nowrap;
     }
 
@@ -1650,6 +1657,12 @@ body.dark-mode footer {
 
     .hero h1 {
         font-size: 2.5rem;
+    }
+
+    .rating-badge {
+        gap: 6px;
+        padding: 7px 12px;
+        font-size: 0.72rem;
     }
 
     .hero-open-widget {
