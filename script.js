@@ -131,6 +131,16 @@ mobileLinks.forEach(link => {
 const tabBtns = document.querySelectorAll('.tab-btn');
 const categories = document.querySelectorAll('.menu-category');
 
+function syncStickyOffset() {
+    const navbar = document.querySelector('.navbar');
+    if (!navbar) return;
+    const offset = navbar.offsetHeight + 8;
+    document.documentElement.style.setProperty('--sticky-offset', `${offset}px`);
+}
+
+syncStickyOffset();
+window.addEventListener('resize', syncStickyOffset);
+
 function scrollToActiveCategoryTop(categoryElement) {
     const navbar = document.querySelector('.navbar');
     const tabsWrapper = document.querySelector('.menu-tabs-wrapper');
@@ -200,6 +210,7 @@ window.addEventListener('scroll', () => {
     } else {
         navbar.classList.remove('scrolled');
     }
+    syncStickyOffset();
 });
 
 // ===== HERO SLIDESHOW =====

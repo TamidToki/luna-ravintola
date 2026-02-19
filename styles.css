@@ -15,10 +15,12 @@
 }
 
 body.dark-mode {
-    --bg-color: #0f0f0f;
-    --card-bg: #1a1a1a;
-    --text-primary: #f3f4f6;
-    --text-secondary: #9ca3af;
+    --bg-color: #050608;
+    --card-bg: #0d1117;
+    --text-primary: #f6f8fb;
+    --text-secondary: #aab2bf;
+    --nav-bg: rgba(5, 6, 8, 0.92);
+    --nav-text: #f8fafc;
 }
 
 /* ===== GLOBAL BACKGROUND PARTICLES ===== */
@@ -358,6 +360,16 @@ img {
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
 }
 
+body.dark-mode .navbar {
+    background: rgba(5, 6, 8, 0.86);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+body.dark-mode .navbar.scrolled {
+    background: rgba(3, 4, 6, 0.96);
+    box-shadow: 0 10px 36px rgba(0, 0, 0, 0.55);
+}
+
 .nav-container {
     display: flex;
     justify-content: space-between;
@@ -372,13 +384,13 @@ img {
 }
 
 .logo-mark {
-    width: 132px;
-    height: 132px;
+    width: 148px;
+    height: 148px;
     object-fit: contain;
     border-radius: 8px;
     flex-shrink: 0;
-    margin-top: -36px;
-    margin-bottom: -36px;
+    margin-top: -43px;
+    margin-bottom: -43px;
     transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
@@ -553,6 +565,10 @@ img {
     background: #1a1a1a;
 }
 
+body.dark-mode .hero {
+    background: #040506;
+}
+
 .hero-slideshow {
     position: absolute;
     inset: 0;
@@ -578,6 +594,10 @@ img {
     inset: 0;
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7));
     z-index: 1;
+}
+
+body.dark-mode .hero-overlay {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.82));
 }
 
 /* Hero Particles */
@@ -966,7 +986,7 @@ body.dark-mode .menu-list-item.highlight {
 
 .menu-tabs-wrapper {
     position: sticky;
-    top: 72px;
+    top: var(--sticky-offset, 80px);
     z-index: 100;
     width: 100%;
     background: rgba(255, 255, 255, 0.42);
@@ -981,7 +1001,7 @@ body.dark-mode .menu-list-item.highlight {
 }
 
 body.dark-mode .menu-tabs-wrapper {
-    background: rgba(18, 18, 18, 0.42);
+    background: rgba(7, 9, 12, 0.7);
     border-color: rgba(255, 255, 255, 0.18);
     box-shadow: 0 10px 26px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.08);
 }
@@ -1481,6 +1501,10 @@ footer {
     padding: 30px 0;
 }
 
+body.dark-mode footer {
+    background: #040506;
+}
+
 .footer-content {
     display: flex;
     flex-wrap: wrap;
@@ -1496,8 +1520,8 @@ footer {
 }
 
 .footer-logo .logo-mark {
-    width: 124px;
-    height: 124px;
+    width: 212px;
+    height: 212px;
     margin-top: 0;
     margin-bottom: 0;
 }
@@ -1531,15 +1555,15 @@ footer {
 @media (max-width: 900px) {
 
     .logo-mark {
-        width: 108px;
-        height: 108px;
-        margin-top: -28px;
-        margin-bottom: -28px;
+        width: 120px;
+        height: 120px;
+        margin-top: -34px;
+        margin-bottom: -34px;
     }
 
     .footer-logo .logo-mark {
-        width: 102px;
-        height: 102px;
+        width: 170px;
+        height: 170px;
         margin-top: 0;
         margin-bottom: 0;
     }
@@ -1555,10 +1579,6 @@ footer {
 }
 
 @media (max-width: 768px) {
-    .menu-tabs-wrapper {
-        top: 70px;
-    }
-
     /* Force visibility on mobile to prevent blank screens if JS fails */
     .animate-on-scroll {
         opacity: 1 !important;
@@ -1569,21 +1589,63 @@ footer {
         font-size: 3rem;
     }
 
-    .mobile-sticky-call {
-        display: flex;
+    .nav-container {
+        flex-wrap: wrap;
+        row-gap: 6px;
+        align-items: center;
     }
 
-    footer {
-        padding-bottom: 80px;
-        /* Space for sticky button */
+    .logo-mark {
+        width: 106px;
+        height: 106px;
+        margin-top: -28px;
+        margin-bottom: -28px;
+    }
+
+    .nav-controls {
+        gap: 6px;
+    }
+
+    .icon-btn {
+        padding: 7px;
+    }
+
+    .lang-btn {
+        font-size: 0.72rem;
+        padding: 5px 9px;
     }
 
     .desktop-nav {
+        display: flex;
+        order: 3;
+        flex: 1 0 100%;
+        justify-content: center;
+        gap: 14px;
+        overflow-x: auto;
+        white-space: nowrap;
+        scrollbar-width: none;
+        padding-top: 2px;
+    }
+
+    .desktop-nav::-webkit-scrollbar {
         display: none;
     }
 
-    .hamburger {
-        display: block;
+    .desktop-nav a {
+        font-size: 0.72rem;
+        letter-spacing: 0.8px;
+        padding: 2px 0;
+        white-space: nowrap;
+    }
+
+    .hamburger,
+    .mobile-menu-overlay {
+        display: none !important;
+    }
+
+    .footer-logo .logo-mark {
+        width: 178px;
+        height: 178px;
     }
 
     .hero h1 {
