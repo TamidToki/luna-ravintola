@@ -2,15 +2,15 @@
 const themeToggle = document.getElementById('theme-toggle');
 const body = document.body;
 
-if (localStorage.getItem('darkMode') === 'true') {
-    body.classList.add('dark-mode');
-    themeToggle.querySelector('i').classList.replace('fa-moon', 'fa-sun');
-}
+// Always start in light mode on page load.
+body.classList.remove('dark-mode');
+localStorage.removeItem('darkMode');
+themeToggle.querySelector('i').classList.remove('fa-sun');
+themeToggle.querySelector('i').classList.add('fa-moon');
 
 themeToggle.addEventListener('click', () => {
     body.classList.toggle('dark-mode');
     const isDark = body.classList.contains('dark-mode');
-    localStorage.setItem('darkMode', isDark);
 
     const icon = themeToggle.querySelector('i');
     if (isDark) {
@@ -24,13 +24,52 @@ themeToggle.addEventListener('click', () => {
 const langToggle = document.getElementById('lang-toggle');
 const langText = document.getElementById('lang-text');
 
+const supportedLangs = ['en', 'fi', 'sv'];
+const swedishFallbacks = {
+    "HOME": "HEM",
+    "MENU": "MENY",
+    "REVIEWS": "RECENSIONER",
+    "CONTACT": "KONTAKT",
+    "The Best Pizza": "Den Bästa Pizzan",
+    "in Turku": "i Åbo",
+    "Huge portions. Fresh ingredients. Unforgettable taste.": "Stora portioner. Färska ingredienser. Oförglömlig smak.",
+    "View Menu": "Se Meny",
+    "OPEN TODAY": "ÖPPET IDAG",
+    "Our Story": "Vår Berättelse",
+    "New in the Neighborhood": "Ny i Området",
+    "Kid Friendly": "Barnvänligt",
+    "Takeaway": "Avhämtning",
+    "Dine In": "Ät Här",
+    "Our Menu": "Vår Meny",
+    "Delicious Choices": "Läckra Val",
+    "Pizzas": "Pizzor",
+    "Hamburgers": "Hamburgare",
+    "Kebab": "Kebab",
+    "Rolls": "Rullar",
+    "Chicken": "Kyckling",
+    "Falafel": "Falafel",
+    "Barbecue": "Grill",
+    "Salads": "Sallader",
+    "Drinks": "Drycker",
+    "Customer Reviews": "Kundrecensioner",
+    "What Our Guests Say": "Vad Våra Gäster Säger",
+    "Based on 6 Google Reviews": "Baserat på 6 Google-recensioner",
+    "See All Google Reviews": "Se Alla Google-recensioner",
+    "Mon-Thu:": "Mån-Tor:",
+    "Fri-Sat:": "Fre-Lör:",
+    "Sun:": "Sön:",
+    "Directions": "Vägbeskrivning",
+    "Call Now": "Ring Nu"
+};
+
 // Always start in English on each page load.
 let currentLang = 'en';
 applyLanguage('en');
 langText.textContent = 'EN';
 
 langToggle.addEventListener('click', () => {
-    currentLang = currentLang === 'en' ? 'fi' : 'en';
+    const currentIndex = supportedLangs.indexOf(currentLang);
+    currentLang = supportedLangs[(currentIndex + 1) % supportedLangs.length];
     applyLanguage(currentLang);
     langText.textContent = currentLang.toUpperCase();
 });
@@ -73,9 +112,14 @@ function initGlobalParticles() {
 initGlobalParticles();
 
 function applyLanguage(lang) {
-    const elements = document.querySelectorAll('[data-en][data-fi]');
+    const elements = document.querySelectorAll('[data-en]');
     elements.forEach(el => {
-        const text = lang === 'fi' ? el.dataset.fi : el.dataset.en;
+        let text = el.dataset.en;
+        if (lang === 'fi') {
+            text = el.dataset.fi || el.dataset.en;
+        } else if (lang === 'sv') {
+            text = el.dataset.sv || swedishFallbacks[el.dataset.en] || el.dataset.en;
+        }
         if (text) {
             el.textContent = text;
         }
@@ -93,12 +137,12 @@ document.querySelectorAll('.translate-btn').forEach(btn => {
         if (!isTranslated) {
             // Show English translation
             reviewText.textContent = '"' + reviewText.dataset.en + '"';
-            btnText.textContent = currentLang === 'en' ? 'Original' : 'Alkuperäinen';
+            btnText.textContent = currentLang === 'fi' ? 'Alkuperäinen' : (currentLang === 'sv' ? 'Original' : 'Original');
             isTranslated = true;
         } else {
             // Show original Finnish
             reviewText.textContent = '"' + reviewText.dataset.fi + '"';
-            btnText.textContent = currentLang === 'en' ? 'Translate' : 'Käännä';
+            btnText.textContent = currentLang === 'fi' ? 'Käännä' : (currentLang === 'sv' ? 'Översätt' : 'Translate');
             isTranslated = false;
         }
     });
