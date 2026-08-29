@@ -1010,3 +1010,4 @@ const catalog = {
     }
   }
 };
+if (typeof module !== "undefined") module.exports = catalog;
