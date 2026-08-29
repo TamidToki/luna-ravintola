@@ -110,8 +110,11 @@ const Cart = {
                 const phone = document.getElementById('checkout-phone').value.trim();
                 const type = document.getElementById('checkout-type').value;
                 const address = document.getElementById('checkout-address').value.trim();
-                const apt = document.getElementById('checkout-apartment').value.trim();
-                const notes = document.getElementById('checkout-notes').value.trim();
+                const aptEl = document.getElementById('checkout-apartment');
+                const apt = aptEl ? aptEl.value.trim() : '';
+                
+                const notesEl = document.getElementById('checkout-notes');
+                const notes = notesEl ? notesEl.value.trim() : '';
                 
                 if (!name || !email || !phone) {
                     alert(currentLang === 'en' ? 'Please fill in Name, Email, and Phone.' : 'Täytä nimi, sähköposti ja puhelinnumero.');
