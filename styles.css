@@ -1973,29 +1973,50 @@ body.dark-mode .side-list li {
     border: 1px solid var(--primary);
 }
 
+/* Cart Sidebar Backdrop */
+.cart-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    cursor: pointer;
+}
+
+.cart-backdrop.active {
+    opacity: 1;
+    visibility: visible;
+}
+
 /* Cart Sidebar */
 .cart-sidebar {
     position: fixed;
     top: 0;
-    right: -400px;
+    left: -400px;
     width: 100%;
     max-width: 400px;
     height: 100vh;
     background-color: var(--card-bg);
-    box-shadow: -5px 0 25px rgba(0,0,0,0.1);
+    box-shadow: 5px 0 25px rgba(0,0,0,0.1);
     z-index: 1000;
     display: flex;
     flex-direction: column;
-    transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow-y: auto;
 }
 
 .dark-mode .cart-sidebar {
     background-color: var(--card-bg);
-    box-shadow: -5px 0 25px rgba(0,0,0,0.5);
+    box-shadow: 5px 0 25px rgba(0,0,0,0.5);
 }
 
 .cart-sidebar.active {
-    right: 0;
+    left: 0;
 }
 
 .cart-header {

@@ -1,3 +1,38 @@
+const STANDARD_TOPPINGS = [
+    { value: 'pineapple', en: 'Pineapple', fi: 'Ananas' },
+    { value: 'blue_cheese', en: 'Blue cheese', fi: 'Aurajuusto' },
+    { value: 'egg', en: 'Egg', fi: 'Kananmuna' },
+    { value: 'bbq_sauce', en: 'BBQ sauce', fi: 'BBQ-kastike' },
+    { value: 'feta', en: 'Feta cheese', fi: 'Fetajuusto' },
+    { value: 'mushroom', en: 'Mushroom', fi: 'Herkkusieni' },
+    { value: 'jalapeno', en: 'Jalapeño', fi: 'Jalapeño' },
+    { value: 'cheese', en: 'Cheese', fi: 'Juusto' },
+    { value: 'mozzarella', en: 'Mozzarella', fi: 'Mozzarella' },
+    { value: 'olive', en: 'Olive', fi: 'Oliivi' },
+    { value: 'paprika', en: 'Paprika', fi: 'Paprika' },
+    { value: 'red_onion', en: 'Red onion', fi: 'Punasipuli' },
+    { value: 'onion', en: 'Onion', fi: 'Sipuli' },
+    { value: 'pickle', en: 'Pickle', fi: 'Suolakurkku' },
+    { value: 'tomato', en: 'Tomato', fi: 'Tomaatti' },
+    { value: 'double_cheese', en: 'Double cheese', fi: 'Tuplajuusto' },
+    { value: 'turkish_pepper', en: 'Turkish pepper', fi: 'Turkinpippuri' },
+    { value: 'garlic', en: 'Garlic', fi: 'Valkosipuli' },
+    { value: 'cherry_tomato', en: 'Cherry tomato', fi: 'Kirsikkatomaatti' }
+];
+
+const PREMIUM_TOPPINGS = [
+    { value: 'minced_meat', en: 'Minced meat', fi: 'Jauheliha' },
+    { value: 'chicken', en: 'Chicken', fi: 'Kana' },
+    { value: 'shrimp', en: 'Shrimp', fi: 'Katkarapu' },
+    { value: 'kebab', en: 'Kebab', fi: 'Kebab' },
+    { value: 'ham', en: 'Ham', fi: 'Kinkku' },
+    { value: 'pepperoni', en: 'Pepperoni', fi: 'Pepperoni' },
+    { value: 'salami', en: 'Salami', fi: 'Salami' },
+    { value: 'mussel', en: 'Mussel', fi: 'Simpukka' },
+    { value: 'tuna', en: 'Tuna', fi: 'Tonnikala' },
+    { value: 'bacon', en: 'Bacon', fi: 'Pekoni' }
+];
+
 const Cart = {
     items: [],
     
@@ -225,12 +260,11 @@ const Modal = {
             
             const selectedToppings = [];
             document.querySelectorAll('#modal-toppings-list input[type="checkbox"]:checked').forEach(cb => {
-                const labelEl = cb.nextElementSibling;
                 selectedToppings.push({
                     id: cb.value,
                     price: parseInt(cb.dataset.price, 10),
-                    label_en: labelEl.dataset.en,
-                    label_fi: labelEl.dataset.fi
+                    label_en: cb.dataset.nameEn || cb.nextElementSibling.dataset.en,
+                    label_fi: cb.dataset.nameFi || cb.nextElementSibling.dataset.fi
                 });
             });
             
@@ -311,9 +345,67 @@ const Modal = {
         const firstRadio = sizesContainer.querySelector('input');
         if(firstRadio) firstRadio.checked = true;
         
+        // Handle toppings container visibility and generation
+        const toppingsContainer = document.getElementById('modal-toppings-container');
+        const toppingsList = document.getElementById('modal-toppings-list');
+        
+        if (toppingsContainer && toppingsList) {
+            if (item.category === 'pizza') {
+                toppingsContainer.style.display = 'block';
+                this.renderToppings();
+            } else {
+                toppingsContainer.style.display = 'none';
+                toppingsList.innerHTML = '';
+            }
+        }
+        
         this.updateDisplay();
         this.overlay.classList.add('active');
         document.body.style.overflow = 'hidden';
+    },
+    
+    renderToppings() {
+        const toppingsList = document.getElementById('modal-toppings-list');
+        if (!toppingsList) return;
+        
+        // Save checked state before re-rendering
+        const checkedToppings = new Set(Array.from(toppingsList.querySelectorAll('input:checked')).map(cb => cb.value));
+        
+        toppingsList.innerHTML = '';
+        
+        const standardPrice = this.currentSize === 'family' ? 200 : 100;
+        const premiumPrice = this.currentSize === 'family' ? 350 : 200;
+        
+        const renderGroup = (toppings, price) => {
+            toppings.forEach(t => {
+                const label = document.createElement('label');
+                const input = document.createElement('input');
+                input.type = 'checkbox';
+                input.value = t.value;
+                input.dataset.price = price;
+                input.dataset.nameEn = t.en;
+                input.dataset.nameFi = t.fi;
+                
+                if (checkedToppings.has(t.value)) {
+                    input.checked = true;
+                }
+                
+                input.addEventListener('change', () => this.updateDisplay());
+                
+                const span = document.createElement('span');
+                span.dataset.en = `${t.en} (+${(price/100).toFixed(2)}€)`;
+                span.dataset.fi = `${t.fi} (+${(price/100).toFixed(2)}€)`;
+                span.textContent = currentLang === 'en' ? span.dataset.en : span.dataset.fi;
+                
+                label.appendChild(input);
+                label.appendChild(document.createTextNode(' '));
+                label.appendChild(span);
+                toppingsList.appendChild(label);
+            });
+        };
+        
+        renderGroup(STANDARD_TOPPINGS, standardPrice);
+        renderGroup(PREMIUM_TOPPINGS, premiumPrice);
     },
     
     updateDisplay() {
@@ -347,10 +439,9 @@ const Modal = {
             i++;
         }
         
-        // Update toppings lang
-        document.querySelectorAll('#modal-toppings-list span').forEach(span => {
-            span.textContent = currentLang === 'en' ? span.dataset.en : span.dataset.fi;
-        });
+        if (item.category === 'pizza') {
+            this.renderToppings();
+        }
     },
     
     close() {
@@ -363,11 +454,18 @@ const Modal = {
 const Sidebar = {
     init() {
         this.element = document.getElementById('cart-sidebar');
+        this.backdrop = document.getElementById('cart-backdrop');
+        
+        // Click anywhere on the backdrop to close the cart
+        if (this.backdrop) {
+            this.backdrop.addEventListener('click', () => this.close());
+        }
     },
     
     open() {
         if(!this.element) return;
         this.element.classList.add('active');
+        if (this.backdrop) this.backdrop.classList.add('active');
         const mobileMenu = document.querySelector('.mobile-menu-overlay');
         if (mobileMenu) mobileMenu.classList.remove('active');
         
@@ -382,6 +480,7 @@ const Sidebar = {
     close() {
         if(!this.element) return;
         this.element.classList.remove('active');
+        if (this.backdrop) this.backdrop.classList.remove('active');
     },
     
     renderItems() {

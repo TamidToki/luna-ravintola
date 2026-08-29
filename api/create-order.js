@@ -36,18 +36,38 @@ export default async function handler(req, res) {
             // Verify toppings
             let toppingTotal = 0;
             const validToppings = [];
+            
+            const standardPrice = item.size === 'family' ? 200 : 100;
+            const premiumPrice = item.size === 'family' ? 350 : 200;
+            
+            const standardToppingsSet = new Set(['pineapple', 'blue_cheese', 'egg', 'bbq_sauce', 'feta', 'mushroom', 'jalapeno', 'cheese', 'mozzarella', 'olive', 'paprika', 'red_onion', 'onion', 'pickle', 'tomato', 'double_cheese', 'turkish_pepper', 'garlic', 'cherry_tomato']);
+            const premiumToppingsSet = new Set(['minced_meat', 'chicken', 'shrimp', 'kebab', 'ham', 'pepperoni', 'salami', 'mussel', 'tuna', 'bacon']);
+            
             if (item.toppings && Array.isArray(item.toppings)) {
                 for (const t of item.toppings) {
-                    // Standard topping logic (hardcoded in html for now: 200 cents, except garlic 100, gluten_free 300)
-                    let tPrice = 200;
-                    if (t.id === 'garlic') tPrice = 100;
-                    if (t.id === 'gluten_free') tPrice = 300;
+                    // `t` in payload is { id, label_en, label_fi } or { value, en, fi } depending on frontend mapping.
+                    // Wait, frontend cart saves them as { value, en, fi }? Let me check how Cart.addItem is constructed in cart.js.
+                    // Previously it was id. Let's handle both or check frontend.
+                    // Wait! In checkout, it sends `t.id`.
+                    // The t.id or t.value. In frontend Modal.updateDisplay we just set input value. But in `Modal.addToCart`?
+                    
+                    let tId = t.id || t.value;
+                    let tPrice = 0;
+                    
+                    if (standardToppingsSet.has(tId)) {
+                        tPrice = standardPrice;
+                    } else if (premiumToppingsSet.has(tId)) {
+                        tPrice = premiumPrice;
+                    } else {
+                        // Fallback
+                        tPrice = standardPrice;
+                    }
                     
                     toppingTotal += tPrice;
                     validToppings.push({
-                        id: t.id,
-                        label_en: t.label_en,
-                        label_fi: t.label_fi,
+                        id: tId,
+                        label_en: t.label_en || t.en || tId,
+                        label_fi: t.label_fi || t.fi || tId,
                         price: tPrice
                     });
                 }
@@ -108,9 +128,12 @@ export default async function handler(req, res) {
         if (itemsError) throw itemsError;
 
         // 3. Create Stripe Checkout Session
-        const host = req.headers['x-forwarded-host'] || req.headers.host;
-        const protocol = host.includes('localhost') ? 'http' : 'https';
-        const domainURL = `${protocol}://${host}`;
+        // Use configured APP_URL to prevent host header poisoning attacks
+        const domainURL = process.env.APP_URL || (() => {
+            const host = req.headers['x-forwarded-host'] || req.headers.host;
+            const protocol = host && host.includes('localhost') ? 'http' : 'https';
+            return `${protocol}://${host}`;
+        })();
 
         const lineItems = orderItems.map(oi => {
             let desc = `Size: ${oi.size_label_en}`;

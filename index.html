@@ -63,7 +63,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=14">
+    <link rel="stylesheet" href="styles.css?v=3?v=14">
     <link rel="preload" as="image" href="assets/pizza_prosciutto.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -552,12 +552,8 @@
                                 <div class="price-row">
                                     <span data-en="Family" data-fi="Perhe">Family</span>
                                     <span class="price-tag">3,50€</span>
-                                
-                            <button class="btn btn-primary add-to-cart-btn" data-item-id="extra_toppings">
-                                <i class="fas fa-cart-plus"></i> <span data-en="Add to Cart" data-fi="Lisää koriin">Add to Cart</span>
-                            </button>
-                        </div>
-                    </div>
+                                </div>
+                            </div>
                             <p class="extra-list"
                                 data-en="Minced meat, chicken, shrimp, kebab, ham, pepperoni, salami, mussel, tuna, bacon"
                                 data-fi="Jauheliha, kana, katkarapu, kebab, kinkku, pepperoni, salami, simpukka, tonnikala, pekoni">
@@ -1005,6 +1001,9 @@
         <span id="cart-count-badge" class="cart-badge">0</span>
     </button>
 
+    <!-- Cart Backdrop (click to close cart) -->
+    <div id="cart-backdrop" class="cart-backdrop"></div>
+
     <!-- Cart Sidebar -->
     <div id="cart-sidebar" class="cart-sidebar">
         <div class="cart-header">
@@ -1059,15 +1058,10 @@
                 </div>
                 
                 
-                <div class="modal-toppings" style="margin-bottom: 25px;">
+                <div class="modal-toppings" id="modal-toppings-container" style="margin-bottom: 25px; display: none;">
                     <h4 data-en="Extra Toppings (+2.00€ each)" data-fi="Lisätäytteet (+2.00€ / kpl)">Extra Toppings (+2.00€ each)</h4>
                     <div id="modal-toppings-list" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; font-size: 0.9rem;">
-                        <label><input type="checkbox" value="cheese" data-price="200"> <span data-en="Extra Cheese" data-fi="Lisäjuusto">Extra Cheese</span></label>
-                        <label><input type="checkbox" value="pepperoni" data-price="200"> <span data-en="Pepperoni" data-fi="Pepperoni">Pepperoni</span></label>
-                        <label><input type="checkbox" value="jalapeno" data-price="200"> <span data-en="Jalapeño" data-fi="Jalapeño">Jalapeño</span></label>
-                        <label><input type="checkbox" value="pineapple" data-price="200"> <span data-en="Pineapple" data-fi="Ananas">Pineapple</span></label>
-                        <label><input type="checkbox" value="garlic" data-price="100"> <span data-en="Garlic (+1.00€)" data-fi="Valkosipuli (+1.00€)">Garlic (+1.00€)</span></label>
-                        <label><input type="checkbox" value="gluten_free" data-price="300"> <span data-en="Gluten-free Base (+3.00€)" data-fi="Gluteeniton pohja (+3.00€)">Gluten-free Base (+3.00€)</span></label>
+                        <!-- Dynamically populated by JS based on size -->
                     </div>
                 </div>
 
@@ -1094,7 +1088,7 @@
     </div>
     
     <script src="menu/catalog.js"></script>
-    <script src="js/cart.js"></script>
+    <script src="js/cart.js?v=3"></script>
 
 </body>
 

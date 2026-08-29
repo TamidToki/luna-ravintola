@@ -46,11 +46,14 @@ export default async function handler(req, res) {
             const orderId = session.metadata.orderId;
 
             if (orderId) {
-                // Update order to paid
+                // Update order to paid — but ONLY if it's still pending.
+                // This prevents a delayed/replayed webhook from reverting
+                // an order that kitchen staff have already moved to 'preparing' or beyond.
                 const { error } = await supabase
                     .from('orders')
                     .update({ status: 'paid' })
-                    .eq('id', orderId);
+                    .eq('id', orderId)
+                    .eq('status', 'pending');
 
                 if (error) {
                     console.error('Error updating order status in Supabase:', error);

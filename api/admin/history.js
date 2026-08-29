@@ -24,7 +24,7 @@ export default async function handler(req, res) {
                 *,
                 order_items (*)
             `)
-            .in('status', ['paid', 'preparing', 'ready', 'in_delivery'])
+            .eq('status', 'completed')
             .order('created_at', { ascending: false });
 
         if (error) throw error;
@@ -32,6 +32,6 @@ export default async function handler(req, res) {
         res.status(200).json(orders);
     } catch (err) {
         console.error('Error fetching orders:', err);
-        res.status(500).json({ error: 'Failed to fetch orders' });
+        res.status(500).json({ error: 'Failed to fetch order history' });
     }
 }
