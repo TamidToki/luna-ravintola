@@ -1895,7 +1895,7 @@ body.dark-mode .side-list li {
 
 .side-option span {
     flex-grow: 1;
-    color: var(--text-color);
+    color: var(--text-primary);
     font-size: 0.95rem;
 }
 
@@ -1923,8 +1923,8 @@ body.dark-mode .side-list li {
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    background-color: var(--primary-color);
-    color: var(--dark-bg);
+    background-color: var(--primary);
+    color: var(--bg-color);
     border: none;
     font-size: 24px;
     display: flex;
@@ -1955,7 +1955,7 @@ body.dark-mode .side-list li {
     top: -5px;
     right: -5px;
     background-color: #fff;
-    color: var(--primary-color);
+    color: var(--primary);
     width: 24px;
     height: 24px;
     border-radius: 50%;
@@ -1968,9 +1968,9 @@ body.dark-mode .side-list li {
 }
 
 .dark-mode .cart-badge {
-    background-color: var(--dark-bg);
-    color: var(--primary-color);
-    border: 1px solid var(--primary-color);
+    background-color: var(--bg-color);
+    color: var(--primary);
+    border: 1px solid var(--primary);
 }
 
 /* Cart Sidebar */
@@ -1981,7 +1981,7 @@ body.dark-mode .side-list li {
     width: 100%;
     max-width: 400px;
     height: 100vh;
-    background-color: var(--white);
+    background-color: var(--card-bg);
     box-shadow: -5px 0 25px rgba(0,0,0,0.1);
     z-index: 1000;
     display: flex;
@@ -1990,7 +1990,7 @@ body.dark-mode .side-list li {
 }
 
 .dark-mode .cart-sidebar {
-    background-color: var(--dark-card);
+    background-color: var(--card-bg);
     box-shadow: -5px 0 25px rgba(0,0,0,0.5);
 }
 
@@ -2020,13 +2020,13 @@ body.dark-mode .side-list li {
     background: none;
     border: none;
     font-size: 24px;
-    color: var(--text-color);
+    color: var(--text-primary);
     cursor: pointer;
     transition: color 0.3s;
 }
 
 .close-btn:hover {
-    color: var(--primary-color);
+    color: var(--primary);
 }
 
 .cart-items {
@@ -2083,13 +2083,13 @@ body.dark-mode .side-list li {
 
 .cart-item-price {
     font-weight: 700;
-    color: var(--primary-color);
+    color: var(--primary);
 }
 
 .cart-footer {
     padding: 20px;
     border-top: 1px solid rgba(0,0,0,0.1);
-    background-color: var(--light-bg);
+    background-color: var(--bg-color);
 }
 
 .dark-mode .cart-footer {
@@ -2132,7 +2132,7 @@ body.dark-mode .side-list li {
 }
 
 .item-modal {
-    background-color: var(--white);
+    background-color: var(--card-bg);
     width: 90%;
     max-width: 500px;
     border-radius: 12px;
@@ -2146,7 +2146,7 @@ body.dark-mode .side-list li {
 }
 
 .dark-mode .item-modal {
-    background-color: var(--dark-card);
+    background-color: var(--card-bg);
     box-shadow: 0 10px 40px rgba(0,0,0,0.5);
 }
 
@@ -2160,7 +2160,7 @@ body.dark-mode .side-list li {
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid rgba(0,0,0,0.1);
-    background-color: var(--light-bg);
+    background-color: var(--bg-color);
 }
 
 .dark-mode .modal-header {
@@ -2171,7 +2171,7 @@ body.dark-mode .side-list li {
 .modal-header h3 {
     margin: 0;
     font-family: 'Playfair Display', serif;
-    color: var(--primary-color);
+    color: var(--primary);
 }
 
 .modal-body {
@@ -2199,7 +2199,7 @@ body.dark-mode .side-list li {
 
 .radio-option input[type="radio"] {
     margin-right: 10px;
-    accent-color: var(--primary-color);
+    accent-color: var(--primary);
     width: 18px;
     height: 18px;
 }
@@ -2222,12 +2222,12 @@ body.dark-mode .side-list li {
     border: 1px solid rgba(0,0,0,0.1);
     border-radius: 25px;
     overflow: hidden;
-    background: var(--white);
+    background: var(--card-bg);
 }
 
 .dark-mode .quantity-controls {
     border: 1px solid rgba(255,255,255,0.1);
-    background: var(--dark-bg);
+    background: var(--bg-color);
 }
 
 .quantity-controls.small {
@@ -2241,7 +2241,7 @@ body.dark-mode .side-list li {
     height: 40px;
     font-size: 20px;
     cursor: pointer;
-    color: var(--text-color);
+    color: var(--text-primary);
     transition: background 0.2s;
 }
 
@@ -2266,8 +2266,8 @@ body.dark-mode .side-list li {
     border-radius: 8px;
     font-family: inherit;
     resize: vertical;
-    background: var(--light-bg);
-    color: var(--text-color);
+    background: var(--bg-color);
+    color: var(--text-primary);
 }
 
 .dark-mode .modal-notes textarea {
@@ -2277,7 +2277,7 @@ body.dark-mode .side-list li {
 
 .modal-notes textarea:focus {
     outline: none;
-    border-color: var(--primary-color);
+    border-color: var(--primary);
 }
 
 .modal-footer {
