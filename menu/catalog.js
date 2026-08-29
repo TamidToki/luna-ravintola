@@ -143,13 +143,31 @@ const catalog = {
     "desc_fi": "",
     "sizes": {}
   },
-  "extra_toppings": {
-    "id": "extra_toppings",
+  "fantasy_2_toppings": {
+    "id": "fantasy_2_toppings",
     "category": "pizza",
     "name_en": "Fantasy 2 toppings",
     "name_fi": "Fantasia 2 täytteellä",
     "desc_en": "2 toppings of your choice",
     "desc_fi": "2 täytettä oman valinnan mukaan",
+    "sizes": {}
+  },
+  "fantasy_3_toppings": {
+    "id": "fantasy_3_toppings",
+    "category": "pizza",
+    "name_en": "Fantasy 3 toppings",
+    "name_fi": "Fantasia 3 täytteellä",
+    "desc_en": "3 toppings of your choice",
+    "desc_fi": "3 täytettä oman valinnan mukaan",
+    "sizes": {}
+  },
+  "fantasy_4_toppings": {
+    "id": "fantasy_4_toppings",
+    "category": "pizza",
+    "name_en": "Fantasy 4 toppings",
+    "name_fi": "Fantasia 4 täytteellä",
+    "desc_en": "4 toppings of your choice",
+    "desc_fi": "4 täytettä oman valinnan mukaan",
     "sizes": {}
   },
   "kids_burger_0": {
