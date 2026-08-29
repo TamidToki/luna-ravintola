@@ -6,7 +6,18 @@ const catalog = {
     "name_fi": "Luna Special",
     "desc_en": "",
     "desc_fi": "",
-    "sizes": {}
+    "sizes": {
+      "norm": {
+        "label_en": "Normal",
+        "label_fi": "Normaali",
+        "price": 1490
+      },
+      "family": {
+        "label_en": "Family",
+        "label_fi": "Perhe",
+        "price": 2750
+      }
+    }
   },
   "margherita": {
     "id": "margherita",
@@ -15,7 +26,18 @@ const catalog = {
     "name_fi": "Margherita",
     "desc_en": "Cheese, pizza sauce, mozzarella",
     "desc_fi": "Juusto, pizzakastike, mozzarella",
-    "sizes": {}
+    "sizes": {
+      "norm": {
+        "label_en": "Normal",
+        "label_fi": "Normaali",
+        "price": 1300
+      },
+      "family": {
+        "label_en": "Family",
+        "label_fi": "Perhe",
+        "price": 2400
+      }
+    }
   },
   "bolognese": {
     "id": "bolognese",
@@ -24,7 +46,18 @@ const catalog = {
     "name_fi": "Bolognese",
     "desc_en": "Minced meat",
     "desc_fi": "Jauheliha",
-    "sizes": {}
+    "sizes": {
+      "norm": {
+        "label_en": "Normal",
+        "label_fi": "Normaali",
+        "price": 1200
+      },
+      "family": {
+        "label_en": "Family",
+        "label_fi": "Perhe",
+        "price": 2390
+      }
+    }
   },
   "americana": {
     "id": "americana",
@@ -33,7 +66,18 @@ const catalog = {
     "name_fi": "Americana",
     "desc_en": "Ham, blue cheese, pineapple",
     "desc_fi": "Kinkku, aurajuusto, ananas",
-    "sizes": {}
+    "sizes": {
+      "norm": {
+        "label_en": "Normal",
+        "label_fi": "Normaali",
+        "price": 1250
+      },
+      "family": {
+        "label_en": "Family",
+        "label_fi": "Perhe",
+        "price": 2350
+      }
+    }
   },
   "kebab_pizza": {
     "id": "kebab_pizza",
@@ -42,7 +86,18 @@ const catalog = {
     "name_fi": "Kebab Pizza",
     "desc_en": "",
     "desc_fi": "",
-    "sizes": {}
+    "sizes": {
+      "norm": {
+        "label_en": "Normal",
+        "label_fi": "Normaali",
+        "price": 1300
+      },
+      "family": {
+        "label_en": "Family",
+        "label_fi": "Perhe",
+        "price": 2550
+      }
+    }
   },
   "chicken_pizza": {
     "id": "chicken_pizza",
@@ -51,7 +106,18 @@ const catalog = {
     "name_fi": "Kanapizza",
     "desc_en": "Chicken, blue cheese, pineapple",
     "desc_fi": "Kana, aurajuusto, ananas",
-    "sizes": {}
+    "sizes": {
+      "norm": {
+        "label_en": "Normal",
+        "label_fi": "Normaali",
+        "price": 1350
+      },
+      "family": {
+        "label_en": "Family",
+        "label_fi": "Perhe",
+        "price": 2600
+      }
+    }
   },
   "vegetarian_pizza": {
     "id": "vegetarian_pizza",
@@ -60,7 +126,18 @@ const catalog = {
     "name_fi": "Kasvispizza",
     "desc_en": "",
     "desc_fi": "",
-    "sizes": {}
+    "sizes": {
+      "norm": {
+        "label_en": "Normal",
+        "label_fi": "Normaali",
+        "price": 1250
+      },
+      "family": {
+        "label_en": "Family",
+        "label_fi": "Perhe",
+        "price": 2350
+      }
+    }
   },
   "frutti_di_mare": {
     "id": "frutti_di_mare",
@@ -69,7 +146,18 @@ const catalog = {
     "name_fi": "Frutti di Mare",
     "desc_en": "Tuna, shrimp, mussel",
     "desc_fi": "Tonnikala, katkarapu, simpukka",
-    "sizes": {}
+    "sizes": {
+      "norm": {
+        "label_en": "Normal",
+        "label_fi": "Normaali",
+        "price": 1350
+      },
+      "family": {
+        "label_en": "Family",
+        "label_fi": "Perhe",
+        "price": 2600
+      }
+    }
   },
   "julia": {
     "id": "julia",
@@ -78,7 +166,18 @@ const catalog = {
     "name_fi": "Julia",
     "desc_en": "",
     "desc_fi": "",
-    "sizes": {}
+    "sizes": {
+      "norm": {
+        "label_en": "Normal",
+        "label_fi": "Normaali",
+        "price": 1300
+      },
+      "family": {
+        "label_en": "Family",
+        "label_fi": "Perhe",
+        "price": 2500
+      }
+    }
   },
   "quatro_stagione": {
     "id": "quatro_stagione",
@@ -87,7 +186,18 @@ const catalog = {
     "name_fi": "Quatro Stagione",
     "desc_en": "Ham, tuna, salami, shrimp",
     "desc_fi": "Kinkku, tonnikala, salami, katkarapu",
-    "sizes": {}
+    "sizes": {
+      "norm": {
+        "label_en": "Normal",
+        "label_fi": "Normaali",
+        "price": 1350
+      },
+      "family": {
+        "label_en": "Family",
+        "label_fi": "Perhe",
+        "price": 2600
+      }
+    }
   },
   "romeo": {
     "id": "romeo",
@@ -96,7 +206,18 @@ const catalog = {
     "name_fi": "Romeo",
     "desc_en": "",
     "desc_fi": "",
-    "sizes": {}
+    "sizes": {
+      "norm": {
+        "label_en": "Normal",
+        "label_fi": "Normaali",
+        "price": 1390
+      },
+      "family": {
+        "label_en": "Family",
+        "label_fi": "Perhe",
+        "price": 2690
+      }
+    }
   },
   "mexicana": {
     "id": "mexicana",
@@ -105,7 +226,18 @@ const catalog = {
     "name_fi": "Mexicana",
     "desc_en": "",
     "desc_fi": "",
-    "sizes": {}
+    "sizes": {
+      "norm": {
+        "label_en": "Normal",
+        "label_fi": "Normaali",
+        "price": 1350
+      },
+      "family": {
+        "label_en": "Family",
+        "label_fi": "Perhe",
+        "price": 2650
+      }
+    }
   },
   "empire": {
     "id": "empire",
@@ -114,7 +246,18 @@ const catalog = {
     "name_fi": "Empire",
     "desc_en": "",
     "desc_fi": "",
-    "sizes": {}
+    "sizes": {
+      "norm": {
+        "label_en": "Normal",
+        "label_fi": "Normaali",
+        "price": 1390
+      },
+      "family": {
+        "label_en": "Family",
+        "label_fi": "Perhe",
+        "price": 2690
+      }
+    }
   },
   "helsinki": {
     "id": "helsinki",
@@ -123,7 +266,18 @@ const catalog = {
     "name_fi": "Helsinki",
     "desc_en": "Minced meat, salami, ham, kebab",
     "desc_fi": "Jauheliha, salami, kinkku, kebab",
-    "sizes": {}
+    "sizes": {
+      "norm": {
+        "label_en": "Normal",
+        "label_fi": "Normaali",
+        "price": 1350
+      },
+      "family": {
+        "label_en": "Family",
+        "label_fi": "Perhe",
+        "price": 2600
+      }
+    }
   },
   "finlandia": {
     "id": "finlandia",
@@ -132,7 +286,18 @@ const catalog = {
     "name_fi": "Finlandia",
     "desc_en": "Ham, blue cheese, salami, bacon",
     "desc_fi": "Kinkku, aurajuusto, salami, pekoni",
-    "sizes": {}
+    "sizes": {
+      "norm": {
+        "label_en": "Normal",
+        "label_fi": "Normaali",
+        "price": 1350
+      },
+      "family": {
+        "label_en": "Family",
+        "label_fi": "Perhe",
+        "price": 2600
+      }
+    }
   },
   "beef_pizza": {
     "id": "beef_pizza",
@@ -141,7 +306,18 @@ const catalog = {
     "name_fi": "Beef Pizza",
     "desc_en": "",
     "desc_fi": "",
-    "sizes": {}
+    "sizes": {
+      "norm": {
+        "label_en": "Normal",
+        "label_fi": "Normaali",
+        "price": 1400
+      },
+      "family": {
+        "label_en": "Family",
+        "label_fi": "Perhe",
+        "price": 2700
+      }
+    }
   },
   "fantasy_2_toppings": {
     "id": "fantasy_2_toppings",
@@ -150,7 +326,18 @@ const catalog = {
     "name_fi": "Fantasia 2 täytteellä",
     "desc_en": "2 toppings of your choice",
     "desc_fi": "2 täytettä oman valinnan mukaan",
-    "sizes": {}
+    "sizes": {
+      "norm": {
+        "label_en": "Normal",
+        "label_fi": "Normaali",
+        "price": 1200
+      },
+      "family": {
+        "label_en": "Family",
+        "label_fi": "Perhe",
+        "price": 2200
+      }
+    }
   },
   "fantasy_3_toppings": {
     "id": "fantasy_3_toppings",
@@ -159,7 +346,18 @@ const catalog = {
     "name_fi": "Fantasia 3 täytteellä",
     "desc_en": "3 toppings of your choice",
     "desc_fi": "3 täytettä oman valinnan mukaan",
-    "sizes": {}
+    "sizes": {
+      "norm": {
+        "label_en": "Normal",
+        "label_fi": "Normaali",
+        "price": 1300
+      },
+      "family": {
+        "label_en": "Family",
+        "label_fi": "Perhe",
+        "price": 2400
+      }
+    }
   },
   "fantasy_4_toppings": {
     "id": "fantasy_4_toppings",
@@ -168,7 +366,18 @@ const catalog = {
     "name_fi": "Fantasia 4 täytteellä",
     "desc_en": "4 toppings of your choice",
     "desc_fi": "4 täytettä oman valinnan mukaan",
-    "sizes": {}
+    "sizes": {
+      "norm": {
+        "label_en": "Normal",
+        "label_fi": "Normaali",
+        "price": 1400
+      },
+      "family": {
+        "label_en": "Family",
+        "label_fi": "Perhe",
+        "price": 2600
+      }
+    }
   },
   "kids_burger_0": {
     "id": "kids_burger_0",
