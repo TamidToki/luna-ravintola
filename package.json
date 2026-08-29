@@ -5,5 +5,9 @@
   "scripts": {
     "start": "npx serve .",
     "build": "echo 'Static site - no build needed'"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.39.3",
+    "stripe": "^14.14.0"
   }
 }

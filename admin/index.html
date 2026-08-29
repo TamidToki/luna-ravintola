@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luna Ravintola - Owner Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #FF6B00;
+            --dark: #121212;
+            --darker: #0a0a0a;
+            --light: #f5f5f5;
+            --gray: #333;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light);
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        .navbar {
+            background-color: var(--dark);
+            color: white;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .navbar h1 {
+            margin: 0;
+            font-family: 'Playfair Display', serif;
+            color: var(--primary);
+        }
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        .order-card {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+            border-left: 5px solid #ccc;
+        }
+        .order-card.status-paid { border-left-color: #2196F3; }
+        .order-card.status-preparing { border-left-color: #FFC107; }
+        .order-card.status-ready { border-left-color: #4CAF50; }
+        
+        .order-header {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+        }
+        .order-id { font-weight: bold; color: #666; }
+        .order-time { color: #888; font-size: 0.9em; }
+        .order-body { display: flex; justify-content: space-between; }
+        .customer-info h3 { margin: 0 0 5px 0; }
+        .customer-info p { margin: 2px 0; color: #555; }
+        .order-items { flex: 1; margin: 0 30px; }
+        .order-items ul { list-style: none; padding: 0; margin: 0; }
+        .order-items li { margin-bottom: 5px; border-bottom: 1px dashed #eee; padding-bottom: 5px;}
+        .order-actions { display: flex; flex-direction: column; gap: 10px; min-width: 200px; }
+        .btn {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+            color: white;
+        }
+        .btn-accept { background-color: var(--primary); }
+        .btn-ready { background-color: #4CAF50; }
+        
+        .modal {
+            display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.5); justify-content: center; align-items: center;
+        }
+        .modal-content {
+            background: white; padding: 20px; border-radius: 8px; width: 400px; max-width: 90%;
+        }
+        .modal-content h3 { margin-top: 0; }
+        .modal-content select { width: 100%; padding: 10px; margin-bottom: 20px; }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <h1>Luna Ravintola Admin</h1>
+        <div id="auth-section">
+            <!-- Basic Auth UI here if needed, or assume protected by middleware -->
+            <span>Admin Dashboard</span>
+        </div>
+    </div>
+    
+    <div class="container">
+        <h2>Incoming Orders</h2>
+        <div id="orders-container">
+            <p>Loading orders...</p>
+        </div>
+    </div>
+
+    <div id="accept-modal" class="modal">
+        <div class="modal-content">
+            <h3>Accept Order</h3>
+            <p>Estimated preparation time:</p>
+            <select id="prep-time">
+                <option value="15">15 Minutes</option>
+                <option value="30" selected>30 Minutes</option>
+                <option value="45">45 Minutes</option>
+                <option value="60">1 Hour</option>
+                <option value="90">1.5 Hours</option>
+            </select>
+            <button id="confirm-accept-btn" class="btn btn-accept" style="width:100%">Accept Order</button>
+            <button id="cancel-accept-btn" class="btn" style="background:#ccc; margin-top:10px; width:100%">Cancel</button>
+        </div>
+    </div>
+
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

@@ -63,7 +63,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=14">
+    <link rel="stylesheet" href="styles.css?v=8">
     <link rel="preload" as="image" href="assets/pizza_prosciutto.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -71,13 +71,25 @@
 <body>
 
     <!-- Global Background Particles -->
-    <div class="global-particles" aria-hidden="true"></div>
+    <div class="global-particles">
+        <i class="fas fa-pizza-slice gp"></i><i class="fas fa-star gp"></i><i class="fas fa-pizza-slice gp"></i>
+        <i class="fas fa-fire gp"></i><i class="fas fa-star gp"></i><i class="fas fa-pizza-slice gp"></i>
+        <i class="fas fa-pepper-hot gp"></i><i class="fas fa-star gp"></i><i class="fas fa-pizza-slice gp"></i>
+        <i class="fas fa-fire gp"></i><i class="fas fa-pizza-slice gp"></i><i class="fas fa-star gp"></i>
+        <i class="fas fa-fire gp"></i><i class="fas fa-pepper-hot gp"></i><i class="fas fa-pizza-slice gp"></i>
+        <i class="fas fa-star gp"></i><i class="fas fa-fire gp"></i><i class="fas fa-pepper-hot gp"></i>
+        <i class="fas fa-pizza-slice gp"></i><i class="fas fa-star gp"></i>
+    </div>
 
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container nav-container">
             <a href="#" class="logo">
-                <img src="assets/logo.png" alt="Luna Ravintola logo" class="logo-mark" loading="eager">
+                <div class="logo-icon"><i class="fas fa-pizza-slice"></i></div>
+                <div>
+                    <div class="logo-text">LUNA</div>
+                    <span class="logo-sub">RAVINTOLA</span>
+                </div>
             </a>
             <div class="nav-links desktop-nav">
                 <a href="#home" data-en="HOME" data-fi="KOTI">HOME</a>
@@ -103,10 +115,10 @@
     <div class="mobile-menu-overlay">
         <button class="close-menu"><i class="fas fa-times"></i></button>
         <div class="mobile-menu-links">
-            <a href="#home" data-en="Home" data-fi="Koti" data-sv="Hem">Home</a>
-            <a href="#menu" data-en="Menu" data-fi="Ruokalista" data-sv="Meny">Menu</a>
-            <a href="#reviews" data-en="Reviews" data-fi="Arvostelut" data-sv="Recensioner">Reviews</a>
-            <a href="#location" data-en="Contact" data-fi="Yhteystiedot" data-sv="Kontakt">Contact</a>
+            <a href="#home">Home</a>
+            <a href="#menu">Menu</a>
+            <a href="#reviews">Reviews</a>
+            <a href="#location">Contact</a>
         </div>
     </div>
 
@@ -385,7 +397,7 @@
                     </div>
                     </div>
                     <div class="menu-card" data-item-id="romeo">
-                        <img src="assets/romeo.jpeg" alt="Romeo" loading="lazy">
+                        <img src="assets/pizza_bbq.jpg" alt="Romeo" loading="lazy">
                         <div class="menu-card-content">
                             <div class="menu-card-header">
                                 <h3 data-en="Romeo" data-fi="Romeo">Romeo</h3>
@@ -409,7 +421,7 @@
                                 <h3 data-en="Mexicana" data-fi="Mexicana">Mexicana</h3>
                             </div>
                             <p data-en="Minced meat, pepperoni, salami, jalapeño, taco sauce"
-                                data-fi="Jauheliha, pepperoni, salami, jalapeño, tacokastike">Jauheliha, pepperoni,
+                                data-fi="Jauheliha, pepperoni, salami, jalapeño, taco sauce">Jauheliha, pepperoni,
                                 salami, jalapeño, tacokastike</p>
                             <div class="dual-price"><span class="price">Norm. €13.50</span><span
                                     class="price family-price">Perhe €26.50</span>
@@ -420,7 +432,7 @@
                     </div>
                     </div>
                     <div class="menu-card" data-item-id="empire">
-                        <img src="assets/empire.jpeg" alt="Empire" loading="lazy">
+                        <img src="assets/pizza_prosciutto.png" alt="Empire" loading="lazy">
                         <div class="menu-card-content">
                             <div class="menu-card-header">
                                 <h3 data-en="Empire" data-fi="Empire">Empire</h3>
@@ -583,71 +595,97 @@
             <div class="menu-category" id="hamburgers">
                 <div class="menu-notice">
                     <p><strong><i class="fas fa-utensils"></i> <span data-en="Meal upgrade +3.00€ (Fries + 0.33l drink)"
-                                data-fi="Ateria +3,00€ (Ranskalaiset + 0,33l juoma)">Meal upgrade +3.00€ (Fries + 0.33l
+                                data-fi="Ateria +3.00€ (Ranskalaiset + 0,33l juoma)">Meal upgrade +3.00€ (Fries + 0.33l
                                 drink)</span></strong></p>
                 </div>
-                <div class="menu-board">
-                    <div class="menu-board-media">
-                        <img src="assets/cheeseburger.avif" alt="Hampurilaiset" loading="lazy">
+                <div class="menu-grid">
+                    <div class="menu-card" data-item-id="cheeseburger">
+                        <img src="assets/cheeseburger.avif" alt="Juustohampurilainen" loading="lazy">
+                        <div class="menu-card-content">
+                            <div class="menu-card-header">
+                                <h3 data-en="Cheeseburger" data-fi="Juustohampurilainen">Cheeseburger</h3><span
+                                    class="price">€10.00</span>
+                            </div>
+                            <p data-en="Classic cheeseburger" data-fi="Klassinen juustohampurilainen">Classic
+                                cheeseburger</p>
+                        
+                            <button class="btn btn-primary add-to-cart-btn" data-item-id="cheeseburger">
+                                <i class="fas fa-cart-plus"></i> <span data-en="Add to Cart" data-fi="Lisää koriin">Add to Cart</span>
+                            </button>
+                        </div>
                     </div>
-                    <div class="menu-list">
-                        <div class="menu-list-header">
-                            <span data-en="Hamburgers" data-fi="Hampurilaiset">Hampurilaiset</span>
-                            <span data-en="Price" data-fi="Hinta">Hinta</span>
-                        </div>
-                        <div class="menu-list-item">
-                            <div class="item-info">
-                                <h4 data-en="Kids Burger" data-fi="Lasten hampurilainen">Lasten hampurilainen</h4>
+                    <div class="menu-card" data-item-id="double_burger">
+                        <img src="assets/layered_hamburger.avif" alt="Kerrosateria" loading="lazy">
+                        <div class="menu-card-content">
+                            <div class="menu-card-header">
+                                <h3 data-en="Double Burger" data-fi="Kerroshampurilainen">Double Burger</h3><span
+                                    class="price">€12.00</span>
                             </div>
-                            <div class="item-prices"><span class="price">€7.00</span></div>
+                            <p data-en="Double burger" data-fi="Tuplahampurilainen">Double burger</p>
+                        
+                            <button class="btn btn-primary add-to-cart-btn" data-item-id="double_burger">
+                                <i class="fas fa-cart-plus"></i> <span data-en="Add to Cart" data-fi="Lisää koriin">Add to Cart</span>
+                            </button>
                         </div>
-                        <div class="menu-list-item">
-                            <div class="item-info">
-                                <h4 data-en="Cheeseburger" data-fi="Juustohampurilainen">Juustohampurilainen</h4>
+                    </div>
+                    <div class="menu-card" data-item-id="kids_burger">
+                        <img src="assets/children's_hamburger.avif" alt="Lasten hampurilainen" loading="lazy">
+                        <div class="menu-card-content">
+                            <div class="menu-card-header">
+                                <h3 data-en="Kids Burger" data-fi="Lasten hampurilainen">Kids Burger</h3><span
+                                    class="price">€7.00</span>
                             </div>
-                            <div class="item-prices"><span class="price">€10.00</span></div>
-                        </div>
-                        <div class="menu-list-item">
-                            <div class="item-info">
-                                <h4 data-en="Layered Burger" data-fi="Kerroshampurilainen">Kerroshampurilainen</h4>
-                            </div>
-                            <div class="item-prices"><span class="price">€12.00</span></div>
+                            <p data-en="Kids burger" data-fi="Lasten hampurilainen">Kids burger</p>
+                        
+                            <button class="btn btn-primary add-to-cart-btn" data-item-id="kids_burger">
+                                <i class="fas fa-cart-plus"></i> <span data-en="Add to Cart" data-fi="Lisää koriin">Add to Cart</span>
+                            </button>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- ===== KEBABIT ===== -->
+            <!-- ===== KEBAB, KANA & FALAFEL ===== -->
             <div class="menu-category" id="kebabs">
                 <div class="menu-notice">
                     <p><strong><span data-en="SAUCES: Mild, Medium, Strong"
-                                data-fi="KASTIKKEET: Mieto, Keskivahva, Vahva">KASTIKKEET: Mieto, Keskivahva, Vahva</span></strong></p>
+                                data-fi="KASTIKKEET: Mieto, Keskivahva, Vahva">SAUCES: Mild, Medium,
+                                Strong</span></strong></p>
                 </div>
-                <div class="menu-board">
-                    <div class="menu-board-media">
-                        <img src="assets/kebab_plate.png" alt="Kebabit" loading="lazy">
-                    </div>
-                    <div class="menu-list">
-                        <div class="menu-list-header">
-                            <span data-en="Kebabs" data-fi="Kebabit">Kebabit</span>
-                            <span data-en="Price" data-fi="Hinta">Hinta</span>
-                        </div>
-                        <div class="menu-list-item">
-                            <div class="item-info"><h4 data-en="Pita Kebab" data-fi="Pitakebab">Pitakebab</h4></div>
-                            <div class="item-prices"><span class="price">€10.90</span></div>
-                        </div>
-                        <div class="menu-list-item"><div class="item-info"><h4 data-en="With French Fries" data-fi="Ranskalaisilla">Ranskalaisilla</h4></div><div class="item-prices"><span class="price">€11.90</span></div></div>
-                        <div class="menu-list-item"><div class="item-info"><h4 data-en="With Potato Wedges" data-fi="Lohkoperunoilla">Lohkoperunoilla</h4></div><div class="item-prices"><span class="price">€12.90</span></div></div>
-                        <div class="menu-list-item"><div class="item-info"><h4 data-en="With Salad" data-fi="Salaatilla">Salaatilla</h4></div><div class="item-prices"><span class="price">€13.90</span></div></div>
-                        <div class="menu-list-item"><div class="item-info"><h4 data-en="With Waffle Fries" data-fi="Ristikkoperunoilla">Ristikkoperunoilla</h4></div><div class="item-prices"><span class="price">€13.90</span></div></div>
-                        <div class="menu-list-item">
-                            <div class="item-info">
-                                <h4 data-en="French Fries + Blue Cheese and Feta" data-fi="Ranskalaisilla + aurajuustolla ja fetajuustolla">Ranskalaisilla + aurajuustolla ja fetajuustolla</h4>
+
+                <h3 class="category-subtitle" data-en="KEBABS" data-fi="KEBABIT">KEBABS</h3>
+                <div class="menu-grid">
+                    <div class="menu-card" data-item-id="10_pcs">
+                        <img src="assets/kebab_plate.png" alt="Kebab with your choice of side dish" loading="lazy">
+                        <div class="menu-card-content">
+                            <div class="menu-card-header">
+                                <h3 data-en="Kebab with your choice of side dish"
+                                    data-fi="Kebab valitsemallasi lisukkeella">Kebab with your choice of side dish</h3>
+                                <span class="price">€11.90</span>
                             </div>
-                            <div class="item-prices"><span class="price">€13.90</span></div>
+                            <div class="side-dish-info">
+                                <p><strong><span data-en="Choose a side dish:" data-fi="Valitse lisuke:">Choose a side
+                                            dish:</span></strong></p>
+                                <ul class="side-list">
+                                    <li><span data-en="Pita bread" data-fi="Pitaleipä">Pita bread</span> <span
+                                            class="price-diff"></span></li>
+                                    <li><span data-en="French Fries" data-fi="Ranskalaiset">French Fries</span> <span
+                                            class="price-diff">+1.00€</span></li>
+                                    <li><span data-en="Potato Wedges" data-fi="Lohkoperunat">Potato Wedges</span> <span
+                                            class="price-diff">+2.00€</span></li>
+                                    <li><span data-en="Cream Potatoes" data-fi="Valkosipuliperunat">Cream
+                                            Potatoes</span> <span class="price-diff">+3.00€</span></li>
+                                    <li><span data-en="Rice" data-fi="Riisi">Rice</span> <span
+                                            class="price-diff">+2.60€</span></li>
+                                    <li><span data-en="Iskender" data-fi="Iskender">Iskender</span> <span
+                                            class="price-diff">+2.00€</span></li>
+                                    <li><span data-en="Salad" data-fi="Salaatti">Salad</span> <span
+                                            class="price-diff">+2.60€</span></li>
+                                    <li><span data-en="Blue Cheese/Feta Fries" data-fi="Aura/Feta Ranskalaiset">Blue
+                                            Cheese/Feta Fries</span> <span class="price-diff">+3.00€</span></li>
+                                </ul>
+                            </div>
                         </div>
-                        <div class="menu-list-item"><div class="item-info"><h4 data-en="Iskender Kebab" data-fi="Iskender kebab">Iskender kebab</h4></div><div class="item-prices"><span class="price">€12.90</span></div></div>
-                        <div class="menu-list-item"><div class="item-info"><h4 data-en="With Rice" data-fi="Riisillä">Riisillä</h4></div><div class="item-prices"><span class="price">€13.50</span></div></div>
                     </div>
                 </div>
             </div>
@@ -656,22 +694,53 @@
             <div class="menu-category" id="rolls">
                 <div class="menu-notice">
                     <p><strong><span data-en="SAUCES: Mild, Medium, Strong"
-                                data-fi="KASTIKKEET: Mieto, Keskivahva, Vahva">KASTIKKEET: Mieto, Keskivahva, Vahva</span></strong></p>
+                                data-fi="KASTIKKEET: Mieto, Keskivahva, Vahva">SAUCES: Mild, Medium,
+                                Strong</span></strong></p>
                 </div>
-                <div class="menu-board">
-                    <div class="menu-board-media">
-                        <img src="assets/roll_kebab_with_your_choice_of_side_dish.avif" alt="Rullakebabit" loading="lazy">
-                    </div>
-                    <div class="menu-list">
-                        <div class="menu-list-header">
-                            <span data-en="Roll Kebabs" data-fi="Rullakebabit">Rullakebabit</span>
-                            <span data-en="Price" data-fi="Hinta">Hinta</span>
+                <h3 class="category-subtitle" data-en="ROLL KEBABS" data-fi="RULLAKEBABIT">ROLL KEBABS</h3>
+                <div class="menu-grid">
+                    <div class="menu-card">
+                        <img src="assets/roll_kebab_with_your_choice_of_side_dish.avif"
+                            alt="Roll Kebab with your choice of side dish" loading="lazy">
+                        <div class="menu-card-content">
+                            <div class="menu-card-header">
+                                <h3 data-en="Roll Kebab with your choice of side dish"
+                                    data-fi="Rullakebab valitsemallasi lisukkeella">Roll Kebab with your choice of side
+                                    dish</h3><span class="price">€12.50</span>
+                            </div>
+                            <div class="side-dish-info">
+                                <p><strong><span data-en="Choose a side dish:" data-fi="Valitse lisuke:">Choose a side
+                                            dish:</span></strong></p>
+                                <ul class="side-list">
+                                    <li><span data-en="Standard Roll" data-fi="Normaali rulla">Standard Roll</span>
+                                        <span class="price-diff"></span>
+                                    </li>
+                                    <li><span data-en="Roll with Blue Cheese" data-fi="Aurajuustorulla">Roll with Blue
+                                            Cheese</span> <span class="price-diff">+1.60€</span></li>
+                                    <li><span data-en="Roll with Feta Cheese" data-fi="Fetajuustorulla">Roll with Feta
+                                            Cheese</span> <span class="price-diff">+1.00€</span></li>
+                                    <li><span data-en="Cheese Roll" data-fi="Juustorulla">Cheese Roll</span> <span
+                                            class="price-diff">+1.10€</span></li>
+                                    <li><span data-en="Cheddar Roll" data-fi="Cheddarrulla">Cheddar Roll</span> <span
+                                            class="price-diff">+1.60€</span></li>
+                                    <li><span data-en="French Fries" data-fi="Ranskalaiset">French Fries</span> <span
+                                            class="price-diff">+1.00€</span></li>
+                                    <li><span data-en="Potato Wedges" data-fi="Lohkoperunat">Potato Wedges</span> <span
+                                            class="price-diff">+2.00€</span></li>
+                                    <li><span data-en="Waffle Fries" data-fi="Ristikkoperunat">Waffle Fries</span>
+                                        <span class="price-diff">+3.00€</span>
+                                    </li>
+                                    <li><span data-en="Rice" data-fi="Riisi">Rice</span> <span
+                                            class="price-diff">+2.60€</span></li>
+                                    <li><span data-en="Iskender" data-fi="Iskender">Iskender</span> <span
+                                            class="price-diff">+2.00€</span></li>
+                                    <li><span data-en="Salad" data-fi="Salaatti">Salad</span> <span
+                                            class="price-diff">+2.60€</span></li>
+                                    <li><span data-en="Blue Cheese/Feta Fries" data-fi="Aura/Feta Ranskalaiset">Blue
+                                            Cheese/Feta Fries</span> <span class="price-diff">+3.00€</span></li>
+                                </ul>
+                            </div>
                         </div>
-                        <div class="menu-list-item"><div class="item-info"><h4 data-en="Roll Kebab" data-fi="Rullakebab">Rullakebab</h4></div><div class="item-prices"><span class="price">€12.50</span></div></div>
-                        <div class="menu-list-item"><div class="item-info"><h4 data-en="Blue Cheese Roll" data-fi="Aurajuustorulla">Aurajuustorulla</h4></div><div class="item-prices"><span class="price">€13.50</span></div></div>
-                        <div class="menu-list-item"><div class="item-info"><h4 data-en="Feta Roll" data-fi="Fetajuustorulla">Fetajuustorulla</h4></div><div class="item-prices"><span class="price">€13.50</span></div></div>
-                        <div class="menu-list-item"><div class="item-info"><h4 data-en="Cheese Roll" data-fi="Juustorulla">Juustorulla</h4></div><div class="item-prices"><span class="price">€13.50</span></div></div>
-                        <div class="menu-list-item"><div class="item-info"><h4 data-en="Cheddar Roll" data-fi="Cheddarrulla">Cheddarrulla</h4></div><div class="item-prices"><span class="price">€13.50</span></div></div>
                     </div>
                 </div>
             </div>
@@ -679,24 +748,41 @@
             <!-- ===== KANA-ANNOKSET ===== -->
             <div class="menu-category" id="chicken">
                 <div class="menu-notice">
-                    <p><strong><span data-en="SAUCES: Mild, Medium, Strong"
-                                data-fi="KASTIKKEET: Mieto, Keskivahva, Vahva">KASTIKKEET: Mieto, Keskivahva, Vahva</span></strong></p>
+                    <p><strong><span data-en="SAUCES: Curry, Garlic, Taco, BBQ, Bearnaise"
+                                data-fi="KASTIKKEET: Curry, Valkosipuli, Taco, BBQ, Bearnaise">SAUCES: Curry, Garlic,
+                                Taco, BBQ, Bearnaise</span></strong></p>
                 </div>
-                <div class="menu-board">
-                    <div class="menu-board-media">
-                        <img src="assets/chicken_with_your_choice_of_side_dish.avif" alt="Kana-annokset" loading="lazy">
-                    </div>
-                    <div class="menu-list">
-                        <div class="menu-list-header">
-                            <span data-en="Chicken Dishes" data-fi="Kana-annokset">Kana-annokset</span>
-                            <span data-en="Price" data-fi="Hinta">Hinta</span>
+                <h3 class="category-subtitle" data-en="CHICKEN DISHES" data-fi="KANA-ANNOKSET">CHICKEN DISHES</h3>
+                <div class="menu-grid">
+                    <div class="menu-card">
+                        <img src="assets/chicken_with_your_choice_of_side_dish.avif"
+                            alt="Chicken with your choice of side dish" loading="lazy">
+                        <div class="menu-card-content">
+                            <div class="menu-card-header">
+                                <h3 data-en="Chicken with your choice of side dish"
+                                    data-fi="Kana valitsemallasi lisukkeella">Chicken with your choice of side dish</h3>
+                                <span class="price">€12.90</span>
+                            </div>
+                            <div class="side-dish-info">
+                                <p><strong><span data-en="Choose a side dish:" data-fi="Valitse lisuke:">Choose a side
+                                            dish:</span></strong></p>
+                                <ul class="side-list">
+                                    <li><span data-en="Pita Bread" data-fi="Pitaleipä">Pita Bread</span> <span
+                                            class="price-diff"></span></li>
+                                    <li><span data-en="French Fries" data-fi="Ranskalaiset">French Fries</span> <span
+                                            class="price-diff">+2.00€</span></li>
+                                    <li><span data-en="Potato Wedges" data-fi="Lohkoperunat">Potato Wedges</span> <span
+                                            class="price-diff">+2.60€</span></li>
+                                    <li><span data-en="Waffle Fries" data-fi="Ristikkoperunat">Waffle Fries</span>
+                                        <span class="price-diff">+3.00€</span>
+                                    </li>
+                                    <li><span data-en="Rice" data-fi="Riisi">Rice</span> <span
+                                            class="price-diff">+3.00€</span></li>
+                                    <li><span data-en="Roll" data-fi="Rulla">Roll</span> <span
+                                            class="price-diff">+2.60€</span></li>
+                                </ul>
+                            </div>
                         </div>
-                        <div class="menu-list-item"><div class="item-info"><h4 data-en="Chicken Pita" data-fi="Kanapita">Kanapita</h4></div><div class="item-prices"><span class="price">€10.90</span></div></div>
-                        <div class="menu-list-item"><div class="item-info"><h4 data-en="With French Fries" data-fi="Ranskalaisilla">Ranskalaisilla</h4></div><div class="item-prices"><span class="price">€12.90</span></div></div>
-                        <div class="menu-list-item"><div class="item-info"><h4 data-en="Chicken with Rice" data-fi="Kana riisillä">Kana riisillä</h4></div><div class="item-prices"><span class="price">€13.90</span></div></div>
-                        <div class="menu-list-item"><div class="item-info"><h4 data-en="With Potato Wedges" data-fi="Lohkoperunoilla">Lohkoperunoilla</h4></div><div class="item-prices"><span class="price">€13.50</span></div></div>
-                        <div class="menu-list-item"><div class="item-info"><h4 data-en="With Waffle Fries" data-fi="Ristikkoperunoilla">Ristikkoperunoilla</h4></div><div class="item-prices"><span class="price">€13.90</span></div></div>
-                        <div class="menu-list-item"><div class="item-info"><h4 data-en="Chicken Roll" data-fi="Kanarulla">Kanarulla</h4></div><div class="item-prices"><span class="price">€13.50</span></div></div>
                     </div>
                 </div>
             </div>
@@ -705,63 +791,187 @@
             <div class="menu-category" id="falafel">
                 <div class="menu-notice">
                     <p><strong><span data-en="SAUCES: Mild, Medium, Strong"
-                                data-fi="KASTIKKEET: Mieto, Keskivahva, Vahva">KASTIKKEET: Mieto, Keskivahva, Vahva</span></strong></p>
+                                data-fi="KASTIKKEET: Mieto, Keskivahva, Vahva">SAUCES: Mild, Medium,
+                                Strong</span></strong></p>
                 </div>
-                <div class="menu-board">
-                    <div class="menu-board-media">
-                        <img src="assets/falafel_with_your_choice_of_side_dish.avif" alt="Falafelit" loading="lazy">
-                    </div>
-                    <div class="menu-list">
-                        <div class="menu-list-header">
-                            <span data-en="Falafels" data-fi="Falafelit">Falafelit</span>
-                            <span data-en="Price" data-fi="Hinta">Hinta</span>
+                <h3 class="category-subtitle" data-en="FALAFELS" data-fi="FALAFELIT">FALAFELS</h3>
+                <div class="menu-grid">
+                    <div class="menu-card">
+                        <img src="assets/falafel_with_your_choice_of_side_dish.avif"
+                            alt="Falafel with your choice of side dish" loading="lazy">
+                        <div class="menu-card-content">
+                            <div class="menu-card-header">
+                                <h3 data-en="Falafel with your choice of side dish"
+                                    data-fi="Falafel valitsemallasi lisukkeella">Falafel with your choice of side dish
+                                </h3>
+                                <span class="price">€12.90</span>
+                            </div>
+                            <div class="side-dish-info">
+                                <p><strong><span data-en="Choose a side dish:" data-fi="Valitse lisuke:">Choose a side
+                                            dish:</span></strong></p>
+                                <ul class="side-list">
+                                    <li><span data-en="French Fries" data-fi="Ranskalaiset">French Fries</span> <span
+                                            class="price-diff"></span></li>
+                                    <li><span data-en="Potato Wedges" data-fi="Lohkoperunat">Potato Wedges</span> <span
+                                            class="price-diff">+1.00€</span></li>
+                                    <li><span data-en="Rice" data-fi="Riisi">Rice</span> <span
+                                            class="price-diff">+1.60€</span></li>
+                                    <li><span data-en="Pita bread" data-fi="Pitaleipä">Pita bread</span> <span
+                                            class="price-diff">-1.00€</span></li>
+                                    <li><span data-en="Roll" data-fi="Rulla">Roll</span> <span
+                                            class="price-diff">+1.00€</span></li>
+                                </ul>
+                            </div>
                         </div>
-                        <div class="menu-list-item"><div class="item-info"><h4 data-en="With French Fries" data-fi="Ranskalaisilla">Ranskalaisilla</h4></div><div class="item-prices"><span class="price">€11.90</span></div></div>
-                        <div class="menu-list-item"><div class="item-info"><h4 data-en="With Potato Wedges" data-fi="Lohkoperunoilla">Lohkoperunoilla</h4></div><div class="item-prices"><span class="price">€12.50</span></div></div>
-                        <div class="menu-list-item"><div class="item-info"><h4 data-en="Falafel with Rice" data-fi="Falafel riisillä">Falafel riisillä</h4></div><div class="item-prices"><span class="price">€13.00</span></div></div>
-                        <div class="menu-list-item"><div class="item-info"><h4 data-en="Falafel Pita" data-fi="Falafel pita">Falafel pita</h4></div><div class="item-prices"><span class="price">€10.90</span></div></div>
-                        <div class="menu-list-item"><div class="item-info"><h4 data-en="Falafel Roll" data-fi="Falafelrulla">Falafelrulla</h4></div><div class="item-prices"><span class="price">€12.50</span></div></div>
                     </div>
                 </div>
             </div>
 
             <!-- ===== SIIVET & GRILLI ===== -->
             <div class="menu-category" id="barbecue">
-                <div class="menu-board">
-                    <div class="menu-board-media">
-                        <img src="assets/hot_wings_25_pcs.avif" alt="Hotwings" loading="lazy">
-                    </div>
-                    <div class="menu-list">
-                        <div class="menu-list-header">
-                            <span data-en="Hot Wings" data-fi="Hotwings">Hotwings</span>
-                            <span data-en="Price" data-fi="Hinta">Hinta</span>
+                <h3 class="category-subtitle" data-en="HOT WINGS" data-fi="HOTWINGS">HOTWINGS</h3>
+                <div class="menu-grid">
+                    <div class="menu-card">
+                        <img src="assets/hot_wings_10_pcs.avif" alt="Hot Wings 10" loading="lazy">
+                        <div class="menu-card-content">
+                            <div class="menu-card-header">
+                                <h3 data-en="10 PCS" data-fi="10 KPL">10 PCS</h3><span class="price">€11.00</span>
+                            </div>
+                            <p data-en="Fries, celery, carrot and hot wings sauce"
+                                data-fi="Ranskalaiset, selleri, porkkana ja hot wings -kastike">Fries, celery, carrot
+                                and hot wings sauce</p>
+                        
+                            <button class="btn btn-primary add-to-cart-btn" data-item-id="10_pcs">
+                                <i class="fas fa-cart-plus"></i> <span data-en="Add to Cart" data-fi="Lisää koriin">Add to Cart</span>
+                            </button>
                         </div>
-                        <div class="menu-list-item"><div class="item-info"><h4 data-en="10 PCS" data-fi="10 kpl">10 kpl</h4></div><div class="item-prices"><span class="price">€12.00</span></div></div>
-                        <div class="menu-list-item"><div class="item-info"><h4 data-en="15 PCS" data-fi="15 kpl">15 kpl</h4></div><div class="item-prices"><span class="price">€16.00</span></div></div>
-                        <div class="menu-list-item"><div class="item-info"><h4 data-en="20 PCS" data-fi="20 kpl">20 kpl</h4></div><div class="item-prices"><span class="price">€19.00</span></div></div>
-                        <div class="menu-list-item"><div class="item-info"><h4 data-en="25 PCS" data-fi="25 kpl">25 kpl</h4></div><div class="item-prices"><span class="price">€23.00</span></div></div>
+                    </div>
+                    <div class="menu-card" data-item-id="15_pcs">
+                        <img src="assets/hot_wings_15_pcs.avif" alt="Hot Wings 15" loading="lazy">
+                        <div class="menu-card-content">
+                            <div class="menu-card-header">
+                                <h3 data-en="15 PCS" data-fi="15 KPL">15 PCS</h3><span class="price">€14.00</span>
+                            </div>
+                            <p data-en="Fries, celery, carrot and hot wings sauce"
+                                data-fi="Ranskalaiset, selleri, porkkana ja hot wings -kastike">Fries, celery, carrot
+                                and hot wings sauce</p>
+                        
+                            <button class="btn btn-primary add-to-cart-btn" data-item-id="15_pcs">
+                                <i class="fas fa-cart-plus"></i> <span data-en="Add to Cart" data-fi="Lisää koriin">Add to Cart</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="menu-card" data-item-id="20_pcs">
+                        <img src="assets/kebab_plate.png" alt="Hot Wings 20" loading="lazy">
+                        <div class="menu-card-content">
+                            <div class="menu-card-header">
+                                <h3 data-en="20 PCS" data-fi="20 KPL">20 PCS</h3><span class="price">€19.00</span>
+                            </div>
+                            <p data-en="Fries, celery, carrot and hot wings sauce"
+                                data-fi="Ranskalaiset, selleri, porkkana ja hot wings -kastike">Fries, celery, carrot
+                                and hot wings sauce</p>
+                        
+                            <button class="btn btn-primary add-to-cart-btn" data-item-id="20_pcs">
+                                <i class="fas fa-cart-plus"></i> <span data-en="Add to Cart" data-fi="Lisää koriin">Add to Cart</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="menu-card" data-item-id="20_pcs">
+                        <img src="assets/hot_wings_20_pcs.avif" alt="Hot Wings 20" loading="lazy">
+                        <div class="menu-card-content">
+                            <div class="menu-card-header">
+                                <h3 data-en="20 PCS" data-fi="20 KPL">20 PCS</h3><span class="price">€18.00</span>
+                            </div>
+                            <p data-en="Fries, celery, carrot and hot wings sauce"
+                                data-fi="Ranskalaiset, selleri, porkkana ja hot wings -kastike">Fries, celery, carrot
+                                and hot wings sauce</p>
+                        
+                            <button class="btn btn-primary add-to-cart-btn" data-item-id="20_pcs">
+                                <i class="fas fa-cart-plus"></i> <span data-en="Add to Cart" data-fi="Lisää koriin">Add to Cart</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="menu-card" data-item-id="25_pcs">
+                        <img src="assets/hot_wings_25_pcs.avif" alt="Hot Wings 25" loading="lazy">
+                        <div class="menu-card-content">
+                            <div class="menu-card-header">
+                                <h3 data-en="25 PCS" data-fi="25 KPL">25 KPL</h3><span class="price">€22.00</span>
+                            </div>
+                            <p data-en="Fries, celery, carrot and hot wings sauce"
+                                data-fi="Ranskalaiset, selleri, porkkana ja hot wings -kastike">Ranskalaiset, selleri,
+                                porkkana ja hot wings -kastike</p>
+                        
+                            <button class="btn btn-primary add-to-cart-btn" data-item-id="25_pcs">
+                                <i class="fas fa-cart-plus"></i> <span data-en="Add to Cart" data-fi="Lisää koriin">Add to Cart</span>
+                            </button>
+                        </div>
                     </div>
                 </div>
 
-                <div class="menu-board">
-                    <div class="menu-board-media">
-                        <img src="assets/sausage_fries.avif" alt="Grilli" loading="lazy">
-                    </div>
-                    <div class="menu-list">
-                        <div class="menu-list-header">
-                            <span data-en="Grill" data-fi="Grilli">Grilli</span>
-                            <span data-en="Price" data-fi="Hinta">Hinta</span>
-                        </div>
-                        <div class="menu-list-item"><div class="item-info"><h4 data-en="French Fries" data-fi="Ranskalaiset">Ranskalaiset</h4></div><div class="item-prices"><span class="price">€6.00</span></div></div>
-                        <div class="menu-list-item"><div class="item-info"><h4 data-en="Sausage Fries" data-fi="Makkaraperunat">Makkaraperunat</h4></div><div class="item-prices"><span class="price">€13.50</span></div></div>
-                        <div class="menu-list-item"><div class="item-info"><h4 data-en="Kids Chicken Basket" data-fi="Lasten kanakori">Lasten kanakori</h4></div><div class="item-prices"><span class="price">€8.00</span></div></div>
-                        <div class="menu-list-item">
-                            <div class="item-info">
-                                <h4 data-en="Chicken Basket" data-fi="Kanakori">Kanakori</h4>
-                                <p data-en="Fries, salad, tomato, cucumber, curry mayo, mayo"
-                                    data-fi="Ranskalaiset, salaatti, tomaatti, kurkku, currymajoneesi, majoneesi">Ranskalaiset, salaatti, tomaatti, kurkku, currymajoneesi, majoneesi</p>
+                <h3 class="category-subtitle" data-en="GRILL" data-fi="GRILLI">GRILLI</h3>
+                <div class="menu-grid">
+                    <div class="menu-card" data-item-id="french_fries">
+                        <img src="assets/french.avif" alt="Ranskalaiset" loading="lazy">
+                        <div class="menu-card-content">
+                            <div class="menu-card-header">
+                                <h3 data-en="French Fries" data-fi="Ranskalaiset">Ranskalaiset</h3><span
+                                    class="price">€5.00</span>
                             </div>
-                            <div class="item-prices"><span class="price">€13.50</span></div>
+                            <p data-en="French fries with paprika mayo & ketchup"
+                                data-fi="Paprikamajoneesi ja ketsuppi">
+                                French fries with paprika mayo & ketchup</p>
+                        
+                            <button class="btn btn-primary add-to-cart-btn" data-item-id="french_fries">
+                                <i class="fas fa-cart-plus"></i> <span data-en="Add to Cart" data-fi="Lisää koriin">Add to Cart</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="menu-card" data-item-id="sausage_fries">
+                        <img src="assets/sausage_fries.avif" alt="Makkara Perunoilla" loading="lazy">
+                        <div class="menu-card-content">
+                            <div class="menu-card-header">
+                                <h3 data-en="Sausage Fries" data-fi="Makkaraperunat">Makkaraperunat</h3><span
+                                    class="price">€13.50</span>
+                            </div>
+                            <p data-en="Sausage fries with salad, ketchup, mayo & mustard"
+                                data-fi="Ranskalaiset, salaatti, punasipuli, kurkkusalaatti, ketsuppi, majoneesi ja sinappi">
+                                Sausage fries</p>
+                        
+                            <button class="btn btn-primary add-to-cart-btn" data-item-id="sausage_fries">
+                                <i class="fas fa-cart-plus"></i> <span data-en="Add to Cart" data-fi="Lisää koriin">Add to Cart</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="menu-card" data-item-id="chicken_basket">
+                        <img src="assets/chicken_with_your_choice_of_side_dish.avif" alt="Kanakori" loading="lazy">
+                        <div class="menu-card-content">
+                            <div class="menu-card-header">
+                                <h3 data-en="Chicken Basket" data-fi="Kanakori">Kanakori</h3><span
+                                    class="price">€13.50</span>
+                            </div>
+                            <p data-en="Chicken basket with fries, salad & paprika mayo"
+                                data-fi="Ranskalaiset, salaatti, tomaatti, kurkku, currymajoneesi, majoneesi">Chicken
+                                basket</p>
+                        
+                            <button class="btn btn-primary add-to-cart-btn" data-item-id="chicken_basket">
+                                <i class="fas fa-cart-plus"></i> <span data-en="Add to Cart" data-fi="Lisää koriin">Add to Cart</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="menu-card" data-item-id="kids_chicken_basket">
+                        <img src="assets/chicken_with_your_choice_of_side_dish.avif" alt="Lasten kanakori"
+                            loading="lazy">
+                        <div class="menu-card-content">
+                            <div class="menu-card-header">
+                                <h3 data-en="Kids Chicken Basket" data-fi="Lasten kanakori">Lasten kanakori</h3><span
+                                    class="price">€6.00</span>
+                            </div>
+                            <p data-en="Kids chicken basket with fries" data-fi="Lasten kanakori ranskalaisilla">Kids
+                                chicken basket</p>
+                        
+                            <button class="btn btn-primary add-to-cart-btn" data-item-id="kids_chicken_basket">
+                                <i class="fas fa-cart-plus"></i> <span data-en="Add to Cart" data-fi="Lisää koriin">Add to Cart</span>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -769,37 +979,109 @@
 
             <!-- ===== SALAATIT ===== -->
             <div class="menu-category" id="salads">
-                <div class="menu-board">
-                    <div class="menu-board-media">
-                        <img src="assets/chicken_salad_.avif" alt="Salaatit" loading="lazy">
-                    </div>
-                    <div class="menu-list">
-                        <div class="menu-list-header">
-                            <span data-en="Salads" data-fi="Salaatit">Salaatit</span>
-                            <span data-en="Price" data-fi="Hinta">Hinta</span>
+                <div class="menu-grid">
+                    <div class="menu-card" data-item-id="chicken_salad">
+                        <img src="assets/chicken_salad_.avif" alt="Kanasalaatti" loading="lazy">
+                        <div class="menu-card-content">
+                            <div class="menu-card-header">
+                                <h3 data-en="Chicken Salad" data-fi="Kanasalaatti">Kanasalaatti</h3><span
+                                    class="price">€13.00</span>
+                            
+                            <button class="btn btn-primary add-to-cart-btn" data-item-id="chicken_salad">
+                                <i class="fas fa-cart-plus"></i> <span data-en="Add to Cart" data-fi="Lisää koriin">Add to Cart</span>
+                            </button>
                         </div>
-                        <div class="menu-list-item"><div class="item-info"><h4 data-en="Chicken Salad" data-fi="Kanasalaatti">Kanasalaatti</h4></div><div class="item-prices"><span class="price">€13.00</span></div></div>
-                        <div class="menu-list-item"><div class="item-info"><h4 data-en="Shrimp Salad" data-fi="Katkarapusalaatti">Katkarapusalaatti</h4></div><div class="item-prices"><span class="price">€13.50</span></div></div>
-                        <div class="menu-list-item"><div class="item-info"><h4 data-en="Tuna Salad" data-fi="Tonnikalasalaatti">Tonnikalasalaatti</h4></div><div class="item-prices"><span class="price">€13.90</span></div></div>
-                        <div class="menu-list-item"><div class="item-info"><h4 data-en="Feta Salad" data-fi="Fetasalaatti">Fetasalaatti</h4></div><div class="item-prices"><span class="price">€13.50</span></div></div>
+                    </div>
+                    </div>
+                    <div class="menu-card" data-item-id="shrimp_salad">
+                        <img src="assets/shrimp_salad.avif" alt="Katkarapusalaatti" loading="lazy">
+                        <div class="menu-card-content">
+                            <div class="menu-card-header">
+                                <h3 data-en="Shrimp Salad" data-fi="Katkarapusalaatti">Katkarapusalaatti</h3><span
+                                    class="price">€13.50</span>
+                            
+                            <button class="btn btn-primary add-to-cart-btn" data-item-id="shrimp_salad">
+                                <i class="fas fa-cart-plus"></i> <span data-en="Add to Cart" data-fi="Lisää koriin">Add to Cart</span>
+                            </button>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="menu-card" data-item-id="tuna_salad">
+                        <img src="assets/tuna_salad.avif" alt="Tonnikalasalaatti" loading="lazy">
+                        <div class="menu-card-content">
+                            <div class="menu-card-header">
+                                <h3 data-en="Tuna Salad" data-fi="Tonnikalasalaatti">Tonnikalasalaatti</h3><span
+                                    class="price">€13.90</span>
+                            
+                            <button class="btn btn-primary add-to-cart-btn" data-item-id="tuna_salad">
+                                <i class="fas fa-cart-plus"></i> <span data-en="Add to Cart" data-fi="Lisää koriin">Add to Cart</span>
+                            </button>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="menu-card" data-item-id="feta_salad">
+                        <img src="assets/feta_salad.avif" alt="Feta Salaatti" loading="lazy">
+                        <div class="menu-card-content">
+                            <div class="menu-card-header">
+                                <h3 data-en="Feta Salad" data-fi="Fetasalaatti">Fetasalaatti</h3><span
+                                    class="price">€13.50</span>
+                            
+                            <button class="btn btn-primary add-to-cart-btn" data-item-id="feta_salad">
+                                <i class="fas fa-cart-plus"></i> <span data-en="Add to Cart" data-fi="Lisää koriin">Add to Cart</span>
+                            </button>
+                        </div>
+                    </div>
                     </div>
                 </div>
             </div>
 
             <!-- ===== JUOMAT ===== -->
             <div class="menu-category" id="drinks">
-                <div class="menu-board">
-                    <div class="menu-board-media">
-                        <img src="assets/0.33l_drink.avif" alt="Juomat" loading="lazy">
-                    </div>
-                    <div class="menu-list">
-                        <div class="menu-list-header">
-                            <span data-en="Drinks" data-fi="Juomat">Juomat</span>
-                            <span data-en="Price" data-fi="Hinta">Hinta</span>
+                <div class="menu-grid">
+                    <div class="menu-card" data-item-id="0.33l_drink">
+                        <img src="assets/0.33l_drink.avif" alt="0.33L Drink" loading="lazy">
+                        <div class="menu-card-content">
+                            <div class="menu-card-header">
+                                <h3 data-en="0.33L Drink" data-fi="0,33L Juoma">0,33L Juoma</h3><span
+                                    class="price">€2.50</span>
+                            </div>
+                            <p data-en="Coca-Cola, Fanta, Sprite, etc." data-fi="Coca-Cola, Fanta, Sprite, ym.">
+                                Coca-Cola, Fanta, Sprite, etc.</p>
+                        
+                            <button class="btn btn-primary add-to-cart-btn" data-item-id="0.33l_drink">
+                                <i class="fas fa-cart-plus"></i> <span data-en="Add to Cart" data-fi="Lisää koriin">Add to Cart</span>
+                            </button>
                         </div>
-                        <div class="menu-list-item"><div class="item-info"><h4 data-en="0.33L" data-fi="0,33L">0,33L</h4></div><div class="item-prices"><span class="price">€2.50</span></div></div>
-                        <div class="menu-list-item"><div class="item-info"><h4 data-en="0.5L" data-fi="0,5L">0,5L</h4></div><div class="item-prices"><span class="price">€3.00</span></div></div>
-                        <div class="menu-list-item"><div class="item-info"><h4 data-en="1.5L" data-fi="1,5L">1,5L</h4></div><div class="item-prices"><span class="price">€4.90</span></div></div>
+                    </div>
+                    <div class="menu-card" data-item-id="0.5l_drink">
+                        <img src="assets/0.5l_drink.avif" alt="0.5L Drink" loading="lazy">
+                        <div class="menu-card-content">
+                            <div class="menu-card-header">
+                                <h3 data-en="0.5L Drink" data-fi="0,5L Juoma">0,5L Juoma</h3><span
+                                    class="price">€3.00</span>
+                            </div>
+                            <p data-en="Coca-Cola, Fanta, Sprite, etc." data-fi="Coca-Cola, Fanta, Sprite, ym.">
+                                Coca-Cola, Fanta, Sprite, etc.</p>
+                        
+                            <button class="btn btn-primary add-to-cart-btn" data-item-id="0.5l_drink">
+                                <i class="fas fa-cart-plus"></i> <span data-en="Add to Cart" data-fi="Lisää koriin">Add to Cart</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="menu-card" data-item-id="1.5l_drink">
+                        <img src="assets/1.5l_drink.avif" alt="1.5L Drink" loading="lazy">
+                        <div class="menu-card-content">
+                            <div class="menu-card-header">
+                                <h3 data-en="1.5L Drink" data-fi="1,5L Juoma">1,5L Juoma</h3><span
+                                    class="price">€4.90</span>
+                            </div>
+                            <p data-en="Coca-Cola, Fanta, Sprite, etc." data-fi="Coca-Cola, Fanta, Sprite, ym.">
+                                Coca-Cola, Fanta, Sprite, etc.</p>
+                        
+                            <button class="btn btn-primary add-to-cart-btn" data-item-id="1.5l_drink">
+                                <i class="fas fa-cart-plus"></i> <span data-en="Add to Cart" data-fi="Lisää koriin">Add to Cart</span>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -833,10 +1115,10 @@
                                 class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                     </div>
                     <p class="review-text"
-                        data-en="It’s been a while since I had such a good meal! The portions were huge and so so so delicious! We can’t wait to try the rest of the menu. We’ll be back for sure ❤️"
-                        data-fi="On kulunut aikaa siitä, kun söin näin hyvän aterian! Annokset olivat valtavat ja todella herkulliset. Emme malta odottaa, että pääsemme kokeilemaan loput menusta. Tulemme varmasti takaisin ❤️">
-                        "It’s been a while since I had such a good meal! The portions were huge and so so so delicious!
-                        We can’t wait to try the rest of the menu. We’ll be back for sure ❤️"</p>
+                        data-en="It's been a while since I had such a good meal! The portions were huge and so delicious! We'll be back for sure ❤️"
+                        data-fi="On kulunut aikaa, kun olen syönyt näin hyvää! Annokset olivat valtavia ja niin herkullisia! Tulemme takaisin ❤️">
+                        "It's been a while since I had such a good meal! The portions were huge and so delicious! We'll
+                        be back for sure ❤️"</p>
                 </div>
                 <div class="review-card">
                     <div class="review-header">
@@ -856,68 +1138,70 @@
                 </div>
                 <div class="review-card">
                     <div class="review-header">
-                        <div class="avatar" style="background:#16a34a;">D</div>
+                        <div class="avatar" style="background:#16a34a;">M</div>
                         <div>
-                            <div class="reviewer-name">Danjar Ibrahimi</div>
-                            <div class="reviewer-sub">6 reviews</div>
+                            <div class="reviewer-name">Matti K.</div>
+                            <div class="reviewer-sub">Paikallinen</div>
                         </div>
                         <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
                                 class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                     </div>
                     <p class="review-text"
-                        data-en="Clean place and friendly customer service. Pizza was a good size, fresh and tasty👌"
-                        data-fi="Siisti paikka ja ystävällinen asiakaspalvelu. Pizza oli hyvän kokoinen, tuore ja maukas 👌">
-                        "Clean place and friendly customer service. Pizza was a good size, fresh and tasty👌"</p>
+                        data-en="Absolutely loved the Luna Special pizza! The combination of kebab and jalapeño is perfect. Fast service and very friendly staff."
+                        data-fi="Rakastin Luna Special -pizzaa! Kebabin ja jalapeñon yhdistelmä on täydellinen. Nopea palvelu ja ystävällinen henkilökunta.">
+                        "Rakastin Luna Special -pizzaa! Kebabin ja jalapeñon yhdistelmä on täydellinen. Nopea palvelu ja
+                        ystävällinen henkilökunta."</p>
+                    <button class="translate-btn"><i class="fas fa-language"></i> <span data-en="Translate"
+                            data-fi="Käännä">Translate</span></button>
                 </div>
                 <div class="review-card">
                     <div class="review-header">
-                        <div class="avatar" style="background:#9333ea;">J</div>
+                        <div class="avatar" style="background:#9333ea;">S</div>
                         <div>
-                            <div class="reviewer-name">Jonna Puittinen</div>
-                            <div class="reviewer-sub">1 review</div>
-                        </div>
-                        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                    </div>
-                    <p class="review-text"
-                        data-en="The food was very good and the service 10/10. Finally, Ilpoinen has a good restaurant after a long time. Go and try it! :)"
-                        data-fi="Ruoka oli erittäin hyvää ja palvelu 10/10. Vihdoin Ilpoisissa on pitkästä aikaa hyvä ravintola. Käykää kokeilemassa! :)">
-                        "The food was very good and the service 10/10. Finally, Ilpoinen has a good restaurant after a
-                        long time. Go and try it! :)"</p>
-                </div>
-                <div class="review-card">
-                    <div class="review-header">
-                        <div class="avatar" style="background:#dc2626;">J</div>
-                        <div>
-                            <div class="reviewer-name">Jussi</div>
+                            <div class="reviewer-name">Sanna T.</div>
                             <div class="reviewer-sub">Local Guide</div>
                         </div>
                         <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
                                 class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                     </div>
                     <p class="review-text"
-                        data-en="We moved to Turku recently and searched for our regular pizza place. Luna exceeded expectations. The base was juicy and tasty, and the staff is very friendly. Highly recommended!"
-                        data-fi="Muutimme vähän aikaa sitten Turkuun ja etsimme vakiopaikkaa pizzalle. Luna täytti odotukset ja enemmän. Erityisesti pohja yllätti: mehukas ja maistuva. Henkilökunta on todella ystävällistä. Suosittelen ehdottomasti!">
-                        "Muutimme vähän aikaa sitten Turkuun ja etsimme vakiopaikkaa pizzalle. Luna täytti odotukset ja
-                        enemmän. Erityisesti pohja yllätti: mehukas ja maistuva. Henkilökunta on todella ystävällistä.
-                        Suosittelen ehdottomasti!"</p>
+                        data-en="Finally a good pizza place in Ilpoinen! The kebab plate was generous and delicious. Kids loved their burger too. Will definitely come back!"
+                        data-fi="Vihdoin hyvä pizzapaikka Ilpoisissa! Kebab-annos oli runsas ja herkullinen. Lapset rakastivat hampurilaistaan. Tulemme takaisin!">
+                        "Vihdoin hyvä pizzapaikka Ilpoisissa! Kebab-annos oli runsas ja herkullinen. Lapset rakastivat
+                        hampurilaistaan."</p>
                     <button class="translate-btn"><i class="fas fa-language"></i> <span data-en="Translate"
                             data-fi="Käännä">Translate</span></button>
                 </div>
                 <div class="review-card">
                     <div class="review-header">
-                        <div class="avatar" style="background:#0891b2;">A</div>
+                        <div class="avatar" style="background:#dc2626;">A</div>
                         <div>
-                            <div class="reviewer-name">Anne Vyyryläinen</div>
+                            <div class="reviewer-name">Ahmed R.</div>
+                            <div class="reviewer-sub">2 reviews</div>
+                        </div>
+                        <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    </div>
+                    <p class="review-text"
+                        data-en="Great new restaurant! The pizza was fresh and hot. Portions are really big - good value for money. Nice family atmosphere."
+                        data-fi="Loistava uusi ravintola! Pizza oli tuoretta ja kuumaa. Annokset ovat todella isoja - hyvä vastine rahalle.">
+                        "Great new restaurant! The pizza was fresh and hot. Portions are really big - good value for
+                        money. Nice family atmosphere."</p>
+                </div>
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="avatar" style="background:#0891b2;">L</div>
+                        <div>
+                            <div class="reviewer-name">Laura H.</div>
                             <div class="reviewer-sub">3 reviews</div>
                         </div>
                         <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
                                 class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                     </div>
                     <p class="review-text"
-                        data-en="Very clean place, good pizza, and very friendly service."
-                        data-fi="Erittäin siisti paikka, hyvä pizza ja erittäin ystävällinen palvelu.">
-                        "Erittäin siisti paikka, hyvä pizza ja erittäin ystävällinen palvelu."</p>
+                        data-en="The Mexicana pizza was amazing - just the right amount of spice! Food arrived hot and fresh."
+                        data-fi="Mexicana-pizza oli hämmästyttävä - juuri sopivasti mausteinen! Ruoka saapui kuumana ja tuoreena.">
+                        "Mexicana-pizza oli hämmästyttävä - juuri sopivasti mausteinen!"</p>
                     <button class="translate-btn"><i class="fas fa-language"></i> <span data-en="Translate"
                             data-fi="Käännä">Translate</span></button>
                 </div>
@@ -952,11 +1236,9 @@
                         <p><strong><span data-en="Sun:" data-fi="Su:">Sun:</span></strong> 12:00-21:00</p>
                     </div>
                     <div class="location-buttons">
-                        <a href="tel:0413154126" class="btn btn-dark"><i class="fas fa-phone"></i> <span
-                                data-en="Call Us" data-fi="Soita Meille" data-sv="Ring Oss">Call Us</span></a>
+                        <a href="tel:0413154126" class="btn btn-dark"><i class="fas fa-phone"></i> Call Us</a>
                         <a href="https://maps.google.com/?q=Lauklähteenkatu+10,+Turku" target="_blank"
-                            class="btn btn-outline"><i class="fas fa-directions"></i> <span data-en="Directions"
-                                data-fi="Reittiohjeet" data-sv="Vägbeskrivning">Directions</span></a>
+                            class="btn btn-outline"><i class="fas fa-directions"></i> Directions</a>
                     </div>
                 </div>
                 <div class="location-map">
@@ -972,7 +1254,10 @@
     <footer>
         <div class="container footer-content">
             <div class="footer-logo logo">
-                <img src="assets/logo.png" alt="Luna Ravintola logo" class="logo-mark" loading="lazy">
+                <div class="logo-icon"><i class="fas fa-pizza-slice"></i></div>
+                <div>
+                    <div class="logo-text">LUNA</div><span class="logo-sub">RAVINTOLA</span>
+                </div>
             </div>
             <div class="footer-links">
                 <a href="tel:0413154126"><i class="fas fa-phone"></i> 041 3154126</a>
@@ -985,7 +1270,12 @@
         </div>
     </footer>
 
-    <script src="script.js?v=6"></script>
+    <script src="script.js"></script>
+
+    <!-- Mobile Sticky Call Button -->
+    <a href="tel:0413154126" class="mobile-sticky-call">
+        <i class="fas fa-phone-alt"></i> <span data-en="Call Now" data-fi="Soita Nyt">Call Now</span>
+    </a>
 
     <!-- Floating Cart Button -->
     <button id="floating-cart-btn" class="floating-cart">

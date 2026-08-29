@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Success - Luna Ravintola</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: var(--light-bg);
+            text-align: center;
+            padding: 20px;
+        }
+        .success-card {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            max-width: 500px;
+        }
+        .dark-mode body { background-color: var(--dark-bg); }
+        .dark-mode .success-card { background: var(--dark-card); }
+        .success-card h1 {
+            color: var(--primary-color);
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 20px;
+        }
+        .success-card p {
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+        }
+        .check-icon {
+            font-size: 64px;
+            color: #4CAF50;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="success-card">
+        <div class="check-icon">✓</div>
+        <h1 data-en="Order Successful!" data-fi="Tilaus Onnistui!">Order Successful!</h1>
+        <p data-en="Thank you for your order. We have received it and will begin preparing it shortly. You will receive an email confirmation." data-fi="Kiitos tilauksestasi. Olemme vastaanottaneet sen ja aloitamme valmistuksen pian. Saat sähköpostiisi vahvistuksen.">
+            Thank you for your order. We have received it and will begin preparing it shortly. You will receive an email confirmation.
+        </p>
+        <a href="index.html" class="btn btn-primary" data-en="Return to Menu" data-fi="Palaa ruokalistaan">Return to Menu</a>
+    </div>
+
+    <script>
+        // Clear cart upon successful checkout
+        localStorage.removeItem('luna_cart');
+        
+        // Simple language handling based on local storage
+        const lang = localStorage.getItem('luna_lang') || 'fi';
+        if (lang === 'fi') {
+            document.querySelectorAll('[data-fi]').forEach(el => {
+                el.textContent = el.dataset.fi;
+            });
+        }
+    </script>
+</body>
+</html>
